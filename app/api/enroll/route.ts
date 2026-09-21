@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
       to: [ADMIN_EMAIL],
       subject: `New Enrollment Registration: ${childName} for ${program}`,
       html: htmlContent,
-      reply_to: parentEmail
+      replyTo: parentEmail
     });
 
     if (error) {

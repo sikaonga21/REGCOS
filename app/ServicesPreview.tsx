@@ -8,32 +8,32 @@ export default function ServicesPreview() {
   const services = [
     {
       icon: MapPinLine,
-      eyebrow: 'Core Offering',
-      title: 'Plot Sales',
+      eyebrow: 'Learning',
+      title: 'Great Teachers',
       description:
-        'Premium serviced plots in strategic locations with documentation support and payment flexibility.',
-      points: ['Prime locations', 'Flexible payment plans', 'Documented ownership'],
-      image: '/images/estates/greatnorth-estate.png',
+        'Passionate, caring educators who inspire excellence, character, and a love for learning in every child.',
+      points: ['Dedicated guidance', 'Strong mentorship', 'Joyful learning'],
+      image: 'https://readdy.ai/api/search-image?query=passionate%20teacher%20with%20students%20in%20bright%20classroom%2C%20happy%20learning%20environment%2C%20modern%20school%20classroom%2C%20warm%20natural%20lighting%2C%20cinematic%20photography&width=1200&height=800&seq=school-service-1&orientation=landscape',
       reverse: false,
     },
     {
       icon: Buildings,
-      eyebrow: 'Development',
-      title: 'Estate Planning',
+      eyebrow: 'Creativity',
+      title: 'Music Program',
       description:
-        'We plan residential communities with layout design, access routes, utilities coordination, and long-term value in mind.',
-      points: ['Site planning', 'Community layout', 'Development strategy'],
-      image: '/images/estates/paramount-estate.jpeg',
+        'Where creativity finds its rhythm and young talents are nurtured in our state-of-the-art music program.',
+      points: ['Talent development', 'Creative confidence', 'Arts enrichment'],
+      image: 'https://readdy.ai/api/search-image?query=children%20learning%20music%20in%20school%20music%20room%2C%20happy%20young%20students%20playing%20instruments%2C%20bright%20creative%20school%20environment%2C%20premium%20photography&width=1200&height=800&seq=school-service-2&orientation=landscape',
       reverse: true,
     },
     {
       icon: FileText,
-      eyebrow: 'Documentation',
-      title: 'Title Processing & Surveying',
+      eyebrow: 'Growth',
+      title: 'Sports Training',
       description:
-        'We support legal documentation, title deed processes, land surveying, and mapping required to secure and develop property confidently.',
-      points: ['Title processing', 'Surveying support', 'Compliance guidance'],
-      image: '/images/estates/fatima-estate.jpeg',
+        'Building strong bodies, teamwork, and confidence through fun and structured sports activities.',
+      points: ['Teamwork', 'Healthy habits', 'Confidence building'],
+      image: 'https://readdy.ai/api/search-image?query=school%20students%20playing%20sports%20together%20on%20field%2C%20teamwork%2C%20healthy%20active%20children%2C%20youthful%20school%20athletics%2C%20golden%20hour&width=1200&height=800&seq=school-service-3&orientation=landscape',
       reverse: false,
     },
   ];
@@ -50,16 +50,16 @@ export default function ServicesPreview() {
           viewport={{ once: true, margin: '-100px' }}
         >
           {/* Eyebrow - muted dark on white background */}
-          <p className="text-[#0a192f]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">
+          <p className="text-navy-lighter/80 font-bold text-xs uppercase tracking-[0.3em] mb-4">
             What We Do
           </p>
-          <h2 className="text-4xl font-bold text-[#0a192f] mb-4 max-w-3xl">
-            Property Services Structured Around Real Ownership
+          <h2 className="text-4xl font-bold text-navy mb-4 max-w-3xl">
+            A School Experience Designed for Growth and Joy
           </h2>
-          <div className="w-12 h-0.5 bg-[#f7b733] mb-4" />
+          <div className="w-12 h-0.5 bg-gold mb-4" />
           <p className="text-lg text-gray-600 max-w-3xl">
-            From land acquisition to documentation and development support, our service offering is
-            designed to move buyers from interest to ownership with clarity.
+            We cultivate a supportive environment where every child can discover their strengths,
+            build confidence, and grow in faith, knowledge, and character.
           </p>
         </motion.div>
 
@@ -70,8 +70,8 @@ export default function ServicesPreview() {
             return (
               <div
                 key={service.title}
-                className={`grid lg:grid-cols-2 overflow-hidden ${
-                  service.reverse ? 'bg-[#f5f5f5]' : 'bg-white'
+                className={`grid lg:grid-cols-2 overflow-hidden rounded-2xl border border-gray-100 hover:shadow-xl transition-shadow duration-300 mb-8 ${
+                  service.reverse ? 'bg-cream-dark' : 'bg-white'
                 }`}
               >
                 <motion.div
@@ -83,30 +83,30 @@ export default function ServicesPreview() {
                     service.reverse ? 'lg:order-2' : ''
                   }`}
                 >
-                  {/* Icon box - dark on light background */}
-                  <div className="w-12 h-12 bg-[#0a192f] flex items-center justify-center mb-6">
-                    <Icon size={22} weight="fill" className="text-white" />
+                  {/* Icon box */}
+                  <div className="w-14 h-14 bg-navy flex items-center justify-center mb-6 rounded-2xl shadow-lg">
+                    <Icon size={26} weight="fill" className="text-gold" />
                   </div>
-                  {/* Eyebrow - muted dark */}
-                  <p className="text-[#0a192f]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">
+                  {/* Eyebrow */}
+                  <p className="text-navy-lighter/80 font-bold text-xs uppercase tracking-[0.3em] mb-4">
                     {service.eyebrow}
                   </p>
-                  <h3 className="text-3xl font-bold text-[#0a192f] uppercase leading-tight mb-4">
+                  <h3 className="text-3xl font-bold text-navy uppercase leading-tight mb-4">
                     {service.title}
                   </h3>
-                  <div className="w-12 h-0.5 bg-[#f7b733] mb-6" />
+                  <div className="w-12 h-0.5 bg-gold mb-6" />
                   <p className="text-gray-600 leading-relaxed mb-8">{service.description}</p>
                   <ul className="space-y-3 mb-8">
                     {service.points.map((point) => (
-                      <li key={point} className="flex items-center gap-3 text-sm text-gray-700">
-                        <span className="w-1.5 h-1.5 bg-[#0a192f] block shrink-0" />
+                      <li key={point} className="flex items-center gap-3 text-sm text-gray-700 font-medium">
+                        <span className="w-2 h-2 rounded-full bg-gold block shrink-0" />
                         <span>{point}</span>
                       </li>
                     ))}
                   </ul>
                   <Link
                     href="/services"
-                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#0a192f] border-b border-[#0a192f] pb-0.5 hover:text-[#f7b733] hover:border-[#f7b733] transition-colors self-start group"
+                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-navy border-b-2 border-navy pb-0.5 hover:text-gold-hover hover:border-gold-hover transition-colors self-start group"
                   >
                     Learn More
                     <ArrowRight
@@ -132,8 +132,8 @@ export default function ServicesPreview() {
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute bottom-6 right-6 flex gap-2">
-                    <span className="w-2.5 h-2.5 bg-[#f7b733] block" />
-                    <span className="w-2.5 h-2.5 bg-[#0a192f] block opacity-60" />
+                    <span className="w-2.5 h-2.5 bg-gold block rounded-full" />
+                    <span className="w-2.5 h-2.5 bg-navy block opacity-60 rounded-full" />
                   </div>
                 </motion.div>
               </div>
@@ -151,9 +151,9 @@ export default function ServicesPreview() {
         >
           <Link
             href="/services"
-            className="bg-[#f7b733] hover:bg-[#e6a625] text-[#0a192f] border border-[#f7b733] px-10 py-4 font-bold uppercase tracking-wider text-sm transition-colors cursor-pointer whitespace-nowrap inline-block"
+            className="bg-gold hover:bg-gold-hover text-navy shadow-lg shadow-gold/20 px-10 py-4 font-bold uppercase tracking-wider text-sm transition-all rounded-sm inline-block hover:scale-105"
           >
-            View All Services
+            Explore More
           </Link>
         </motion.div>
       </div>

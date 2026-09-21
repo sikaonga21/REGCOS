@@ -44,8 +44,8 @@ export default function CareersPage() {
       <main>
         <InnerPageHero
           eyebrow="Join Our Team"
-          title="Careers at Calm Mountain"
-          description="Explore current openings and discover where your experience can support property development, client service, and growth across Zambia."
+          title="Careers at Regcos Christian Academy"
+          description="Explore current openings and discover where your experience can support a Christ-centered school community, student growth, and educational excellence across Zambia."
           backgroundImage="/images/team-hero.jpg"
         />
 

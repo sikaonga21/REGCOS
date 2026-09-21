@@ -18,25 +18,24 @@ export default function ServicesCTA() {
           Take the Next Step
         </p>
         <h2 className="text-4xl md:text-5xl font-bold text-black uppercase leading-tight mb-6">
-          Ready to Get Started?
+          Ready to Enroll?
         </h2>
         <p className="text-black/70 text-base mb-10 max-w-xl leading-relaxed">
-          Contact us today to discuss your property needs and discover how we can help you achieve
-          your real estate goals, from consultation to handover.
+          We welcome families who want a Christ-centered learning environment where academic excellence and character development go hand in hand.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
             href="/contact"
             className="inline-flex items-center justify-center gap-2 border border-black px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-black hover:text-[#f7b733] transition-all duration-300"
           >
-            Get Free Consultation
+            Enroll Now
             <ArrowRight size={16} weight="bold" />
           </Link>
           <Link
-            href="/listings"
+            href="/about"
             className="inline-flex items-center justify-center bg-black text-white px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-[#0a192f] transition-all duration-300"
           >
-            View Available Plots
+            Learn More
           </Link>
         </div>
       </motion.div>
@@ -50,11 +49,11 @@ export default function ServicesCTA() {
       >
         <img
           src="/images/estates/greatnorth-estate.png"
-          alt="Calm Mountain Properties services"
+          alt="Regcos Christian Academy services"
           className="w-full h-full object-cover opacity-30"
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-white/10 text-7xl font-bold uppercase tracking-widest">CMP</div>
+          <div className="text-white/10 text-7xl font-bold uppercase tracking-widest">RCA</div>
         </div>
       </motion.div>
     </section>

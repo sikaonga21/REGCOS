@@ -6,45 +6,45 @@ import { HouseLine, MapPinLine, Megaphone, Gear, FileText, Buildings, Check } fr
 const services = [
   {
     icon: HouseLine,
-    title: 'Property Sales',
+    title: 'Great Teachers',
     description:
-      'Facilitating the buying and selling of residential, commercial, and farm properties. We connect buyers with their ideal properties and help sellers achieve the best value.',
-    features: ['Residential Properties', 'Commercial Real Estate', 'Agricultural Land', 'Professional Valuation'],
+      'Passionate, caring educators who inspire excellence, character, and a love for learning in every child.',
+    features: ['Dedicated educators', 'Strong mentorship', 'Positive role models', 'Curriculum support'],
   },
   {
     icon: MapPinLine,
-    title: 'Plot Sales',
+    title: 'Music Program',
     description:
-      'Selling individual plots of land in prime locations across Zambia. All plots come with proper documentation and flexible payment options.',
-    features: ['Titled Plots', 'Prime Locations', 'Flexible Payment Plans', 'Infrastructure Ready'],
+      'Where creativity finds its rhythm and young talents are nurtured in a vibrant, state-of-the-art music environment.',
+    features: ['Creative expression', 'Talent development', 'Confidence building', 'Music appreciation'],
   },
   {
     icon: Megaphone,
-    title: 'Sales Consultancy',
+    title: 'Sports Training',
     description:
-      'Providing expert advice and guidance related to property sales. Our consultants help you make informed decisions about your real estate investments.',
-    features: ['Market Analysis', 'Investment Advisory', 'Negotiation Support', 'Legal Guidance'],
+      'Building strong bodies, teamwork, and confidence through fun and structured sports activities.',
+    features: ['Teamwork', 'Healthy lifestyles', 'Confidence', 'Physical growth'],
   },
   {
     icon: Gear,
-    title: 'Property Management',
+    title: 'Skills Recognition',
     description:
-      'Overseeing and managing properties on behalf of owners. We ensure your property maintains its value while generating optimal returns.',
-    features: ['Tenant Management', 'Maintenance Services', 'Rent Collection', 'Property Inspections'],
+      'Celebrating every child’s unique talents by identifying, nurturing, and rewarding their gifts.',
+    features: ['Talent discovery', 'Encouragement', 'Personal growth', 'Achievement celebration'],
   },
   {
     icon: FileText,
-    title: 'Land Title Processing',
+    title: 'Early Learning Excellence',
     description:
-      'Handling all legal procedures and documentation for land ownership. We ensure smooth and legitimate transfer of property rights.',
-    features: ['Title Deed Processing', 'Legal Documentation', 'Government Liaison', 'Verification Services'],
+      'We focus on building essential skills in literacy, numeracy, creativity, and character during the most important years of development.',
+    features: ['Literacy', 'Numeracy', 'Creativity', 'Character building'],
   },
   {
     icon: Buildings,
-    title: 'Construction',
+    title: 'Faith-Led Discovery',
     description:
-      'Engaging in building and development activities. From residential homes to commercial complexes, we bring your vision to life.',
-    features: ['Project Management', 'Quality Construction', 'Timely Delivery', 'Cost-Effective Solutions'],
+      'Our learners explore, create, and discover through hands-on activities, music, early technology, and faith-based teaching.',
+    features: ['Discovery-based learning', 'Technology exposure', 'Hands-on activities', 'Faith-based growth'],
   },
 ];
 
@@ -63,12 +63,11 @@ export default function ServicesList() {
             Full Offering
           </p>
           <h2 className="text-4xl font-bold text-[#0a192f] uppercase leading-tight mb-4">
-            Our Services
+            Our Programs
           </h2>
           <div className="w-12 h-0.5 bg-[#f7b733] mb-4" />
           <p className="text-lg text-gray-600 max-w-2xl">
-            We provide comprehensive real estate services to meet all your property needs, from
-            initial planning to final construction.
+            We create a joyful, faith-filled learning experience that helps each child grow in knowledge, character, and confidence.
           </p>
         </motion.div>
 

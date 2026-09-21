@@ -6,12 +6,12 @@ export default function TeamGrid() {
   const teamMembers = [
     {
       name: 'Kathy Kapalakasha',
-      position: 'Managing Director',
-      department: 'Executive',
-      image: '/images/team/kathy.png', // Professional photo of Kathy Kapalakasha
-      bio: 'Kathy leads our company in Zambian real estate development and property management.',
+      position: 'School Director',
+      department: 'Leadership',
+      image: '/images/team/kathy.png',
+      bio: 'Kathy leads the academy with a heart for Christ-centered learning, academic excellence, and the holistic growth of every child.',
       phone: '+260 761 370 566',
-      email: 'md@calmmountainproperties.com'
+      email: 'info@regcoschristianacademy.com'
     },
     // {
     //   name: 'name name',
@@ -34,9 +34,9 @@ export default function TeamGrid() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="text-4xl font-bold text-[#0a192f] mb-6">Meet Our Leadership Team</h2>
+          <h2 className="text-4xl font-bold text-[#0a192f] mb-6">Meet Our Leadership</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our leadership team brings years of experience and dedication to making your property ownership dreams a reality
+            Our leadership team is dedicated to creating a safe, nurturing, and faith-filled environment where every child can thrive.
           </p>
         </motion.div>
         

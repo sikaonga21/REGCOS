@@ -6,30 +6,30 @@ import { Quotes, Star } from 'phosphor-react';
 export default function TestimonialsSection() {
   const testimonials = [
     {
-      name: 'James Mwanza',
-      location: 'Great North Estate, Kabwe',
-      image: 'https://readdy.ai/api/search-image?query=Professional%20African%20businessman%20in%20his%2040s%2C%20confident%20smile%2C%20business%20attire%2C%20modern%20office%20background%2C%20successful%20property%20investor%2C%20trustworthy%20appearance%2C%20well-groomed%2C%20positive%20expression&width=80&height=80&seq=testimonial-001&orientation=squarish',
-      text: 'Calm Mountain Properties made my land purchase seamless. The documentation was perfect, and their team guided me through every step. My plot in Great North Estate is exactly as promised.',
+      name: 'Parent 1',
+      location: 'Woodlands',
+      image: 'https://readdy.ai/api/search-image?query=happy%20parent%20smiling%20with%20child%2C%20warm%20family%20portrait%2C%20confident%20parent%2C%20natural%20light%2C%20friendly%20home%20background&width=80&height=80&seq=testimonial-001&orientation=squarish',
+      text: 'Regcos Christian Academy has created a warm and inspiring place where our child is growing in confidence, kindness, and academic strength.',
       rating: 5
     },
     {
-      name: 'Grace Tembo',
-      location: 'Paramount Estate, Kitwe',
-      image: 'https://readdy.ai/api/search-image?query=Professional%20African%20businesswoman%20in%20her%2030s%2C%20warm%20smile%2C%20professional%20attire%2C%20modern%20office%20setting%2C%20successful%20property%20owner%2C%20confident%20appearance%2C%20friendly%20expression&width=80&height=80&seq=testimonial-002&orientation=squarish',
-      text: 'The flexible payment plan allowed me to invest in my dream plot without financial strain. The location is perfect, close to all amenities and well-connected. Highly recommended!',
+      name: 'Parent 2',
+      location: 'School Community',
+      image: 'https://readdy.ai/api/search-image?query=confident%20mother%20with%20young%20child%20smiling%2C%20family%20portrait%2C%20happy%20home%20environment%2C%20warm%20lighting&width=80&height=80&seq=testimonial-002&orientation=squarish',
+      text: 'The teachers are caring and dedicated. My child loves learning here and is developing both spiritually and academically.',
       rating: 5
     },
     {
-      name: 'David Banda',
-      location: 'Dreamscape Housing, Ndola',
-      image: 'https://readdy.ai/api/search-image?query=Professional%20African%20man%20in%20his%2050s%2C%20genuine%20smile%2C%20business%20casual%20attire%2C%20modern%20background%2C%20experienced%20property%20investor%2C%20trustworthy%20demeanor%2C%20satisfied%20expression&width=80&height=80&seq=testimonial-003&orientation=squarish',
-      text: 'Exceptional service from start to finish. The team is knowledgeable, professional, and truly cares about their clients. My investment in Dreamscape has been one of my best decisions.',
+      name: 'Parent 3',
+      location: 'Rockfield/Woodlands',
+      image: 'https://readdy.ai/api/search-image?query=joyful%20father%20with%20school-aged%20child%20smiling%2C%20friendly%20family%20photo%2C%20bright%20natural%20light&width=80&height=80&seq=testimonial-003&orientation=squarish',
+      text: 'We chose Regcos because of the faith-filled environment, excellent care, and the focus on whole-child development for every learner.',
       rating: 5
     }
   ];
 
   return (
-    <section className="py-20 bg-[#f5f5f5]">
+    <section className="py-20 bg-cream">
       <div className="container mx-auto px-4">
         <motion.div 
           className="mb-16"
@@ -38,12 +38,12 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <p className="text-[#f7b733] font-bold text-xs uppercase tracking-[0.3em] mb-4">Client Stories</p>
-          <h2 className="text-4xl font-bold text-[#0a192f] mb-4 max-w-3xl">
-            What Our Clients Say
+          <p className="text-gold font-bold text-xs uppercase tracking-[0.3em] mb-4">Parent Voices</p>
+          <h2 className="text-4xl font-bold text-navy mb-4 max-w-3xl">
+            What Parents Say
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl">
-            Real stories from real people who found their perfect plot and peace of mind with Calm Mountain Properties.
+            Families trust Regcos Christian Academy because we nurture every child with care, faith, and purposeful learning.
           </p>
         </motion.div>
         
@@ -51,16 +51,16 @@ export default function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <motion.div 
               key={index} 
-              className="bg-white border border-gray-100 p-8 shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-50"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
               viewport={{ once: true, margin: "-50px" }}
             >
-              <Quotes size={28} weight="fill" className="text-[#f7b733] mb-5" />
+              <Quotes size={32} weight="fill" className="text-gold/40 mb-5" />
               <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={18} weight="fill" className="text-[#f7b733]" />
+                  <Star key={i} size={18} weight="fill" className="text-gold" />
                 ))}
               </div>
               
@@ -70,11 +70,11 @@ export default function TestimonialsSection() {
                 <img 
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover mr-4"
+                  className="w-12 h-12 rounded-full object-cover mr-4 ring-2 ring-gold/20"
                 />
                 <div>
-                  <h4 className="font-semibold text-[#0a192f]">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.location}</p>
+                  <h4 className="font-semibold text-navy">{testimonial.name}</h4>
+                  <p className="text-sm text-gray-500 font-medium">{testimonial.location}</p>
                 </div>
               </div>
             </motion.div>

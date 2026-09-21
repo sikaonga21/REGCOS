@@ -8,29 +8,29 @@ export default function LocationMap() {
       <div className="container mx-auto px-4">
         <div className="mb-12">
           <p className="text-[#0a192f]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">Location</p>
-          <h2 className="text-4xl font-bold text-[#0a192f] uppercase mb-4">Find Us</h2>
+          <h2 className="text-4xl font-bold text-[#0a192f] uppercase mb-4">Our Location</h2>
           <div className="w-12 h-0.5 bg-[#f7b733] mb-4" />
           <p className="text-lg text-gray-600">
-            Visit our main office in Ndola or contact us to arrange a meeting
+            Visit our campus in Woodlands and meet our team for an admission conversation.
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="bg-[#f5f5f5] p-8 border border-gray-100">
-            <h3 className="text-2xl font-bold text-[#0a192f] mb-6">Main Office Location</h3>
+            <h3 className="text-2xl font-bold text-[#0a192f] mb-6">Campus Location</h3>
             <div className="space-y-4">
               <div className="flex items-start">
                 <MapPinLine size={20} weight="fill" className="text-[#0a192f] mr-4 mt-1 shrink-0" />
                 <div>
                   <h4 className="font-semibold text-[#0a192f] mb-1">Address</h4>
-                  <p className="text-gray-700">No. 7 Chinika Road, Northrise<br/>Ndola, Zambia</p>
+                  <p className="text-gray-700">Stand No. 12305, Woodlands</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <Phone size={20} weight="fill" className="text-[#0a192f] mr-4 mt-1 shrink-0" />
                 <div>
                   <h4 className="font-semibold text-[#0a192f] mb-1">Phone</h4>
-                  <p className="text-gray-700">+260 761 370 566</p>
+                  <p className="text-gray-700">+260 975 141 977</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -39,7 +39,7 @@ export default function LocationMap() {
                   <h4 className="font-semibold text-[#0a192f] mb-1">Business Hours</h4>
                   <p className="text-gray-700">
                     Monday - Friday: 8:00 AM - 5:00 PM<br/>
-                    Saturday: 9:00 AM - 1:00 PM<br/>
+                    Saturday: 8:00 AM - 1:00 PM<br/>
                     Sunday: Closed
                   </p>
                 </div>
@@ -76,7 +76,7 @@ export default function LocationMap() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Calm Mountain Properties Ndola Location"
+              title="Regcos Christian Academy Ndola Location"
             ></iframe>
           </div>
         </div>

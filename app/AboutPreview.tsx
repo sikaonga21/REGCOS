@@ -15,27 +15,27 @@ export default function AboutPreview() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <p className="text-[#f7b733] font-bold text-xs uppercase tracking-[0.3em] mb-4">About Us</p>
-            <h2 className="text-4xl font-bold text-[#0a192f] mb-6 max-w-2xl">
-              A Property Company Built Around Trust, Structure, and Long-Term Value
+            <p className="text-navy-lighter/80 font-bold text-xs uppercase tracking-[0.3em] mb-4">About Us</p>
+            <h2 className="text-4xl font-bold text-navy mb-6 max-w-2xl">
+              A Christ-centered academy shaping confident learners and leaders.
             </h2>
             <p className="text-lg text-gray-600 mb-5 leading-relaxed">
-              Founded in 2022, Calm Mountain is a property developer and real estate agency headquartered in Ndola with branches in Kitwe and Kabwe.
+              Regcos Christian Academy is a Christ-centered institution committed to nurturing hearts, minds, and futures through quality education rooted in Christian values.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              We provide end-to-end real estate services across Zambia, including property sales, sales consultancy, property management, land title processing, construction, and plot sales.
+              We blend academic excellence with character development, creativity, and compassionate leadership so every child can grow confidently and purposefully.
             </p>
             <div className="space-y-3 mb-10">
               {[
-                { icon: Buildings, label: 'Property development and sales' },
-                { icon: ShieldCheck, label: 'Documentation and legal support' },
-                { icon: MapPinLine, label: 'Presence in Ndola, Kitwe, and Kabwe' },
+                { icon: Buildings, label: 'Academic excellence with Christian values' },
+                { icon: ShieldCheck, label: 'Holistic development and care' },
+                { icon: MapPinLine, label: 'A nurturing community for every learner' },
               ].map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.label} className="flex items-center gap-3 text-sm text-gray-700">
-                    <div className="w-10 h-10 bg-[#f7b733]/15 flex items-center justify-center shrink-0">
-                      <Icon size={18} weight="fill" className="text-[#f7b733]" />
+                  <div key={item.label} className="flex items-center gap-4 text-sm text-gray-700 font-medium">
+                    <div className="w-12 h-12 bg-gold/20 flex items-center justify-center shrink-0 rounded-2xl shadow-sm">
+                      <Icon size={20} weight="fill" className="text-navy" />
                     </div>
                     <span>{item.label}</span>
                   </div>
@@ -44,7 +44,7 @@ export default function AboutPreview() {
             </div>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#0a192f] border-b border-[#0a192f] pb-0.5 hover:text-[#f7b733] hover:border-[#f7b733] transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-navy border-b-2 border-navy pb-0.5 hover:text-gold-hover hover:border-gold-hover transition-colors"
             >
               Learn More
               <ArrowRight size={14} weight="bold" />
@@ -52,7 +52,7 @@ export default function AboutPreview() {
           </motion.div>
           
           <motion.div 
-            className="relative overflow-hidden"
+            className="relative overflow-hidden rounded-2xl shadow-2xl"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -60,12 +60,12 @@ export default function AboutPreview() {
           >
             <img
               src="/images/peview-png.png"
-              alt="Calm Mountain overview"
-              className="shadow-lg w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+              alt="Regcos Christian Academy overview"
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute bottom-6 right-6 flex gap-2">
-              <span className="w-2.5 h-2.5 bg-[#f7b733] block" />
-              <span className="w-2.5 h-2.5 bg-[#0a192f] block opacity-60" />
+              <span className="w-2.5 h-2.5 bg-gold block rounded-full" />
+              <span className="w-2.5 h-2.5 bg-navy block opacity-60 rounded-full" />
             </div>
           </motion.div>
         </div>

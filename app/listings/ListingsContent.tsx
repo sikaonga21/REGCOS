@@ -46,7 +46,7 @@ export default function ListingsContent() {
     fetchListings();
   }, []);
 
-  const locationKeyFromText = (locationText: string) => {
+  const locationKeyFromText = (locationText?: string) => {
     const t = (locationText || '').toLowerCase();
     if (t.includes('kabwe')) return 'kabwe';
     if (t.includes('kitwe')) return 'kitwe';

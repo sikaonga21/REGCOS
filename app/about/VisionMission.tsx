@@ -39,12 +39,11 @@ export default function VisionMission() {
               Our Vision
             </p>
             <h3 className="text-2xl font-bold uppercase mb-6 leading-tight">
-              Leading Property Developer in Zambia
+              Christian-centered schooling for lifelong excellence
             </h3>
             <div className="w-10 h-0.5 bg-[#f7b733] mb-6" />
             <p className="text-white/70 leading-relaxed text-sm">
-              To become the leading property developer and facilitate easy access to land for the
-              Zambian people across all regions of the country.
+              Our vision is anchored in Christian-centered schooling, equipping learners with lifelong academic, social, and physical skills that foster balanced attitudes toward life and prepare them to participate responsibly in society.
             </p>
           </motion.div>
 
@@ -63,12 +62,11 @@ export default function VisionMission() {
               Our Mission
             </p>
             <h3 className="text-2xl font-bold text-[#0a192f] uppercase mb-6 leading-tight">
-              Top-Notch Real Estate Services
+              Nurturing hearts, minds, and futures
             </h3>
             <div className="w-10 h-0.5 bg-[#f7b733] mb-6" />
             <p className="text-gray-600 leading-relaxed text-sm">
-              To provide top-notch real estate services and ensure proper management of properties
-              throughout Zambia, setting the standard for professionalism and client trust.
+              Our mission is to provide a quality education that blends academic excellence with strong Christian values, equipping learners to grow into compassionate leaders, confident communicators, and critical thinkers.
             </p>
           </motion.div>
         </div>

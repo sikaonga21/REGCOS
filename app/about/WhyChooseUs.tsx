@@ -6,39 +6,39 @@ import { Medal, IdentificationBadge, Handshake, MapPinLine, Scales, Users } from
 const reasons = [
   {
     icon: Medal,
-    title: 'High-Quality Products & Services',
+    title: 'Academic Excellence',
     description:
-      'We provide high-quality products and services backed by multifaceted expertise in real estate and property development.',
+      'We nurture strong learning foundations so each child can grow in confidence, knowledge, and purpose.',
   },
   {
     icon: IdentificationBadge,
-    title: 'Diligent Service Execution',
+    title: 'Whole-Child Development',
     description:
-      'We serve our clients diligently and ensure thorough execution of all services, from initial consultation to final delivery.',
+      'We care for the intellectual, spiritual, emotional, social, and physical growth of every learner.',
   },
   {
     icon: Handshake,
-    title: 'Reliable Partnership',
+    title: 'Strong Family Partnership',
     description:
-      'We guarantee a partnership with a reliable real estate agency and property developer you can trust for your investments.',
+      'We work closely with parents and guardians to support each child’s journey with trust and care.',
   },
   {
     icon: MapPinLine,
-    title: 'Strategic Locations',
+    title: 'Safe, Inspiring Environment',
     description:
-      'Properties in prime locations across Ndola, Kitwe, and Kabwe with excellent growth potential and infrastructure.',
+      'Our community is built to help children feel seen, supported, and ready to grow in confidence.',
   },
   {
     icon: Scales,
-    title: 'Complete Legal Support',
+    title: 'Faith-Based Values',
     description:
-      'Full legal support for land title processing and documentation, ensuring secure and legitimate property ownership.',
+      'Christian principles guide our teaching, behavior, and relationships, shaping character and leadership.',
   },
   {
     icon: Users,
-    title: 'Customer-First Approach',
+    title: 'Personalized Care',
     description:
-      'Our commitment to customer satisfaction drives every decision we make, ensuring personalised service for each client.',
+      'Every learner is valued as unique, with their strengths, needs, and potential thoughtfully supported.',
   },
 ];
 
@@ -57,7 +57,7 @@ export default function WhyChooseUs() {
             Our Commitment
           </p>
           <h2 className="text-4xl font-bold text-white uppercase leading-tight mb-4">
-            Why Choose Calm Mountain?
+            Why Choose Regcos?
           </h2>
           <div className="w-12 h-0.5 bg-[#f7b733]" />
         </motion.div>

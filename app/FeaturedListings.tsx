@@ -70,7 +70,7 @@ export default function FeaturedListings() {
   }, [listings]);
 
   return (
-    <section className="pt-28 pb-24 bg-[#0a192f]">
+    <section className="pt-28 pb-24 bg-navy-light">
       <div className="container mx-auto px-4">
         <motion.div 
           className="mb-12"
@@ -79,9 +79,9 @@ export default function FeaturedListings() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <p className="text-[#f7b733] font-bold text-xs uppercase tracking-[0.3em] mb-4">Featured Opportunities</p>
+          <p className="text-gold font-bold text-xs uppercase tracking-[0.3em] mb-4">Admissions & Programs</p>
           <h2 className="text-4xl font-bold text-white mb-4 max-w-3xl">
-            Top Listings (Updated from the CMS)
+            Featured Programs (Updated from the CMS)
           </h2>
           <p className="text-lg text-white/70 max-w-3xl">
             These are the first three listings in your CMS sort order. Add/edit them any time in the dashboard.
@@ -116,7 +116,7 @@ export default function FeaturedListings() {
             return (
               <motion.div
                 key={listing.id}
-                className="border border-white/10 bg-white/5 overflow-hidden hover:border-white/25 transition-colors"
+                className="bg-navy border border-white/10 overflow-hidden hover:border-gold/50 transition-all duration-300 rounded-2xl shadow-xl hover:shadow-gold/10 hover:-translate-y-1"
                 initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.08, ease: 'easeOut' }}
@@ -124,24 +124,24 @@ export default function FeaturedListings() {
               >
                 <div className="relative">
                   <img src={imageUrl} alt={listing.title} className="w-full h-56 object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent" />
 
                   <div className="absolute top-4 left-4 flex items-center gap-2">
-                    <span className="bg-white text-[#0a192f] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em]">
+                    <span className="bg-gold text-navy px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] rounded-sm">
                       {listing.txnLabel}
                     </span>
-                    <span className="border border-white/25 text-white px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em]">
+                    <span className="border border-white/25 bg-navy/40 backdrop-blur-md text-white px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] rounded-sm">
                       {listing.kindLabel}
                     </span>
                   </div>
 
-                  <div className="absolute top-4 right-4 bg-[#f7b733] text-[#0a192f] px-3 py-1 text-sm font-semibold">
+                  <div className="absolute top-4 right-4 bg-cream text-navy shadow-md px-3 py-1 text-sm font-semibold rounded-sm">
                     {listing.priceLabel}
                   </div>
 
-                  <div className="absolute bottom-4 left-4 flex items-center gap-2 text-white">
-                    <div className="flex h-9 w-9 items-center justify-center bg-[#f7b733] text-[#0a192f]">
-                      <KindIcon size={18} weight="fill" />
+                  <div className="absolute bottom-4 left-4 flex items-center gap-3 text-white">
+                    <div className="flex h-10 w-10 items-center justify-center bg-gold text-navy rounded-md shadow-md">
+                      <KindIcon size={20} weight="fill" />
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-[0.22em] text-white/70">Location</p>
@@ -154,7 +154,7 @@ export default function FeaturedListings() {
                   <h3 className="text-2xl font-bold text-white mb-3">{listing.title}</h3>
 
                   <div className="flex items-center gap-2 text-white/70 mb-5">
-                    <MapPinLine size={16} weight="fill" className="text-[#f7b733]" />
+                    <MapPinLine size={16} weight="fill" className="text-gold" />
                     <span className="text-sm">{listing.location || 'Zambia'}</span>
                   </div>
 
@@ -162,17 +162,17 @@ export default function FeaturedListings() {
                     {listing.description || 'View details for pricing and inspection options.'}
                   </p>
 
-                  <div className="flex gap-2">
+                  <div className="flex gap-3">
                     <Link
                       href={`/listings/${listing.slug}`}
-                      className="flex-1 bg-[#f7b733] hover:bg-[#e6a625] text-[#0a192f] px-4 py-3 font-bold uppercase tracking-[0.18em] transition-colors text-center cursor-pointer whitespace-nowrap inline-flex items-center justify-center gap-2 text-xs"
+                      className="flex-1 bg-gold hover:bg-gold-hover text-navy px-4 py-3 font-bold uppercase tracking-[0.18em] transition-all text-center cursor-pointer whitespace-nowrap inline-flex items-center justify-center gap-2 text-xs rounded-sm hover:scale-105 shadow-md shadow-gold/20"
                     >
                       View Details
                       <ArrowRight size={14} weight="bold" />
                     </Link>
                     <Link
                       href="/dashboard"
-                      className="border border-white/20 text-white hover:bg-white hover:text-[#0a192f] px-4 py-3 font-bold uppercase tracking-[0.18em] transition-colors cursor-pointer whitespace-nowrap text-xs inline-flex items-center justify-center gap-2"
+                      className="border border-white/20 text-white hover:bg-white hover:text-navy px-4 py-3 font-bold uppercase tracking-[0.18em] transition-all cursor-pointer whitespace-nowrap text-xs inline-flex items-center justify-center gap-2 rounded-sm"
                       title="Edit listings in the CMS"
                     >
                       <Buildings size={16} weight="fill" />
@@ -194,9 +194,9 @@ export default function FeaturedListings() {
         >
           <Link 
             href="/listings" 
-            className="bg-white text-[#0a192f] hover:bg-[#f7b733] px-10 py-4 font-bold uppercase tracking-wider text-sm transition-colors cursor-pointer whitespace-nowrap inline-block"
+            className="bg-cream text-navy hover:bg-gold px-10 py-4 font-bold uppercase tracking-wider text-sm transition-all cursor-pointer whitespace-nowrap inline-block rounded-sm hover:scale-105 shadow-lg"
           >
-            View All Listings
+            View All Programs
           </Link>
         </motion.div>
       </div>

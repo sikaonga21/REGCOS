@@ -5,9 +5,9 @@ import { Buildings, ShieldCheck, MapPinLine, Check } from 'phosphor-react';
 
 export default function CompanyOverview() {
   const points = [
-    { icon: Buildings, label: 'First in class real estate service provider' },
-    { icon: ShieldCheck, label: 'Multifaceted expertise in property development' },
-    { icon: MapPinLine, label: 'Trusted partner for land ownership in Zambia' },
+    { icon: Buildings, label: 'A Christ-centered learning community' },
+    { icon: ShieldCheck, label: 'Academic excellence rooted in faith and values' },
+    { icon: MapPinLine, label: 'A nurturing environment for every child' },
   ];
 
   return (
@@ -25,7 +25,7 @@ export default function CompanyOverview() {
             Who We Are
           </p>
           <h2 className="text-4xl font-bold text-[#0a192f] uppercase leading-tight mb-4 max-w-2xl">
-            About Calm Mountain
+            About Regcos
           </h2>
           <div className="w-12 h-0.5 bg-[#f7b733]" />
         </motion.div>
@@ -40,13 +40,10 @@ export default function CompanyOverview() {
           >
             <h3 className="text-2xl font-bold text-[#0a192f] uppercase mb-6">Our Purpose</h3>
             <p className="text-gray-600 leading-relaxed mb-5">
-              Founded in 2022, Calm Mountain has become a reputable property developer and real
-              estate agency with its Head Office in Ndola and branches in Kitwe and Kabwe.
+              Established in March 2023, Regcos Christian Academy is dedicated to providing a comprehensive educational environment that nurtures life-transforming learning and instills sound Christian values.
             </p>
             <p className="text-gray-600 leading-relaxed mb-8">
-              Our goal is to make land ownership accessible to Zambians and to ensure properties are
-              professionally managed throughout the country, through transparency, legal certainty,
-              and service excellence.
+              Our purpose is to raise a generation of compassionate leaders, clear communicators, and critical thinkers who honor Christ in all they do while growing into confident, capable members of society.
             </p>
 
             <ul className="space-y-4 mb-10">
@@ -74,7 +71,7 @@ export default function CompanyOverview() {
           >
             <img
               src="/images/about-png.png"
-              alt="About Calm Mountain Properties"
+              alt="About Regcos Christian Academy"
               className="w-full h-auto object-cover shadow-lg hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute bottom-6 right-6 flex gap-2">

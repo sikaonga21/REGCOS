@@ -6,25 +6,25 @@ import { Clock, EnvelopeSimple, MapPinLine, Phone } from 'phosphor-react';
 export default function ContactInfo() {
   const offices = [
     {
-      city: 'Ndola',
-      title: 'Main Office',
-      address: 'No. 7 Chinika Road, Northrise',
-      phone: '+260 761 370 566',
-      email: 'info@calmountainproperties.com',
+      city: 'Woodlands',
+      title: 'Main Campus',
+      address: 'Stand No. 12305, Woodlands',
+      phone: '+260 975 141 977',
+      email: 'admin@regcoschristianacademy.com',
     },
     {
-      city: 'Kabwe',
-      title: 'Kabwe Office',
-      address: 'No. 204-214a Lusito Street',
-      phone: '+260 761 370 566 / +260 962 453 695',
-      email: 'info@calmountainproperties.com',
+      city: 'Admissions',
+      title: 'Office Desk',
+      address: 'Call or email for school enrollment information',
+      phone: '+260 978 900 184',
+      email: 'regcoschristianacademy@gmail.com',
     },
     {
-      city: 'Kitwe',
-      title: 'Kitwe Office',
-      address: 'No. 115 Luela Rd, off Cent street Nkana East',
-      phone: '+260 761 370 566 / +260 768 935 521',
-      email: 'info@calmountainproperties.com',
+      city: 'Support',
+      title: 'General Enquiries',
+      address: 'Appointments and school visits by arrangement',
+      phone: '+260 965 423 585',
+      email: 'admin@regcoschristianacademy.com',
     }
   ];
 

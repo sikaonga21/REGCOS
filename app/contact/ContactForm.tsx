@@ -9,8 +9,8 @@ export default function ContactForm() {
     email: '',
     phone: '',
     subject: '',
-    estate: '',
-    plotSize: '',
+    program: '',
+    childAge: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,7 +42,9 @@ export default function ContactForm() {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          estate: formData.estate,
+          subject: formData.subject,
+          program: formData.program,
+          childAge: formData.childAge,
           message: formData.message
         })
       });
@@ -56,8 +58,8 @@ export default function ContactForm() {
           email: '',
           phone: '',
           subject: '',
-          estate: '',
-          plotSize: '',
+          program: '',
+          childAge: '',
           message: ''
         });
       } else {
@@ -133,7 +135,7 @@ export default function ContactForm() {
                     className="w-full appearance-none bg-white border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:border-[#0a192f] transition-colors"
                   >
                     <option value="">Select Subject</option>
-                    {['General Inquiry', 'Plot Purchase', 'Site Visit Request', 'Title Processing', 'Construction Services', 'Other'].map(subject => (
+                    {['General Inquiry', 'Enrollment', 'School Tour', 'Scholarship Support', 'Admissions Support', 'Other'].map(subject => (
                       <option key={subject} value={subject}>{subject}</option>
                     ))}
                   </select>
@@ -144,37 +146,39 @@ export default function ContactForm() {
 
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Interested Estate</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Program of Interest</label>
                 <div className="relative">
                   <select
-                    name="estate"
-                    value={formData.estate}
+                    name="program"
+                    value={formData.program}
                     onChange={handleChange}
                     className="w-full appearance-none bg-white border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:border-[#0a192f] transition-colors"
                   >
                     <option value="">Not Sure Yet</option>
-                    <option value="Great North Estate - Kabwe">Great North Estate - Kabwe</option>
-                    <option value="Paramount Estate - Kitwe">Paramount Estate - Kitwe</option>
-                    <option value="Dreamscape Housing - Ndola">Dreamscape Housing - Ndola</option>
-                    <option value="Fatima Estate - Ndola">Fatima Estate - Ndola</option>
+                    <option value="Nursery">Nursery</option>
+                    <option value="Primary">Primary</option>
+                    <option value="Junior School">Junior School</option>
+                    <option value="Music Program">Music Program</option>
+                    <option value="Sports Program">Sports Program</option>
                   </select>
                   <CaretDown size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Preferred Plot Size</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Child Age / Grade</label>
                 <div className="relative">
                   <select
-                    name="plotSize"
-                    value={formData.plotSize}
+                    name="childAge"
+                    value={formData.childAge}
                     onChange={handleChange}
                     className="w-full appearance-none bg-white border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:border-[#0a192f] transition-colors"
                   >
                     <option value="">Not Sure Yet</option>
-                    <option value="30x20">30x20</option>
-                    <option value="32x25">32x25</option>
-                    <option value="40x20">40x20</option>
-                    <option value="40x30">40x30</option>
+                    <option value="2-3 years">2-3 years</option>
+                    <option value="4-5 years">4-5 years</option>
+                    <option value="Grade 1-3">Grade 1-3</option>
+                    <option value="Grade 4-7">Grade 4-7</option>
+                    <option value="High School">High School</option>
                   </select>
                   <CaretDown size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
                 </div>

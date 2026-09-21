@@ -3,34 +3,34 @@
 export default function DepartmentOverview() {
   const departments = [
     {
-      name: 'Sales Department',
+      name: 'Admissions Team',
       icon: 'ri-customer-service-2-line',
-      description: 'Our sales team helps clients find the perfect plots and guides them through the purchasing process.',
-      responsibilities: ['Client consultation', 'Property viewing', 'Sales processing', 'Customer support']
+      description: 'Guides families through the enrollment journey with care, clarity, and a welcoming spirit.',
+      responsibilities: ['Family support', 'Enrollment guidance', 'School tours', 'Student onboarding']
     },
     {
-      name: 'Technical Department',
+      name: 'Academic Team',
       icon: 'ri-compass-3-line',
-      description: 'Handles all surveying, mapping, and technical aspects of property development.',
-      responsibilities: ['Land surveying', 'Mapping services', 'Technical documentation', 'Site planning']
+      description: 'Creates engaging, age-appropriate learning experiences that inspire curiosity and excellence.',
+      responsibilities: ['Lesson planning', 'Student progress support', 'Curriculum delivery', 'Classroom guidance']
     },
     {
-      name: 'Legal Department',
+      name: 'Spiritual Life Team',
       icon: 'ri-scales-line',
-      description: 'Ensures all legal requirements are met and handles documentation processes.',
-      responsibilities: ['Title processing', 'Legal documentation', 'Regulatory compliance', 'Contract management']
+      description: 'Fosters a Christ-centered culture rooted in faith, worship, character, and service.',
+      responsibilities: ['Devotionals', 'Discipleship', 'Character formation', 'Community care']
     },
     {
-      name: 'Development Department',
+      name: 'Arts & Sports Team',
       icon: 'ri-building-2-line',
-      description: 'Manages infrastructure development and construction supervision services.',
-      responsibilities: ['Project management', 'Infrastructure development', 'Construction supervision', 'Quality control']
+      description: 'Nurtures creativity, confidence, and healthy lifestyles through music, sports, and extracurricular activities.',
+      responsibilities: ['Music development', 'Sports training', 'Talent discovery', 'Creative expression']
     },
     {
-      name: 'Finance Department',
+      name: 'Operations Team',
       icon: 'ri-money-dollar-circle-line',
-      description: 'Handles all financial operations including payment processing and financial planning.',
-      responsibilities: ['Payment processing', 'Financial planning', 'Budget management', 'Financial reporting']
+      description: 'Ensures a structured, safe, and smoothly run school experience for students and families.',
+      responsibilities: ['School operations', 'Student care', 'Parent communication', 'Daily coordination']
     }
   ];
 
@@ -38,9 +38,9 @@ export default function DepartmentOverview() {
     <section className="py-20 bg-[#f5f5f5]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#0a192f] mb-6">Our Departments</h2>
+          <h2 className="text-4xl font-bold text-[#0a192f] mb-6">Our Support Teams</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Each department works together to deliver comprehensive real estate solutions
+            Every team works together to create a nurturing, faith-led school environment where children can flourish.
           </p>
         </div>
         

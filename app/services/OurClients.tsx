@@ -6,21 +6,21 @@ import { HouseLine, Buildings, Leaf } from 'phosphor-react';
 const clientTypes = [
   {
     icon: HouseLine,
-    title: 'Residential Buyers & Sellers',
+    title: 'Families Seeking a Strong Start',
     description:
-      'Individuals and families looking to buy or sell homes. We help you find your dream home or get the best value for your property.',
+      'Parents who want a nurturing environment where their children can grow spiritually, academically, and socially.',
   },
   {
     icon: Buildings,
-    title: 'Commercial Property Investors',
+    title: 'Learners Ready to Shine',
     description:
-      'Businesses and investors involved in commercial real estate. We provide strategic insights for profitable, long-term investments.',
+      'Students who are excited to discover their gifts, build confidence, and achieve their full potential.',
   },
   {
     icon: Leaf,
-    title: 'Farm Property Clients',
+    title: 'Community Partners',
     description:
-      'Individuals or entities interested in agricultural land or farms. We understand the unique needs of agricultural property investment.',
+      'Families and supporters who believe in a Christ-centered education rooted in faith, values, and excellence.',
   },
 ];
 
@@ -36,14 +36,14 @@ export default function OurClients() {
           viewport={{ once: true, margin: '-100px' }}
         >
           <p className="text-[#0a192f]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">
-            Our Clients
+            Our Community
           </p>
           <h2 className="text-4xl font-bold text-[#0a192f] uppercase leading-tight mb-4">
             Who We Serve
           </h2>
           <div className="w-12 h-0.5 bg-[#f7b733] mb-4" />
           <p className="text-lg text-gray-600 max-w-2xl">
-            We provide tailored real estate solutions for diverse client needs across Zambia.
+            We partner with families and learners who want a Christ-centered education built on values, excellence, and personal growth.
           </p>
         </motion.div>
 

@@ -8,15 +8,15 @@ import { ArrowRight } from 'phosphor-react';
 export default function HeroSection() {
   return (
     <section
-      className="relative h-screen w-full min-w-0 overflow-hidden bg-black"
+      className="relative h-screen w-full min-w-0 overflow-hidden bg-navy"
       style={{
-        backgroundImage: `url('https://readdy.ai/api/search-image?query=Modern%20luxury%20residential%20estate%20in%20Zambia%20with%20beautiful%20houses%2C%20well-planned%20residential%20plots%2C%20professional%20real%20estate%20development%2C%20green%20landscaping%2C%20paved%20roads%2C%20mountain%20views%20in%20background%2C%20golden%20hour%20lighting%2C%20premium%20property%20investment%20opportunity%2C%20contemporary%20African%20architecture&width=1920&height=1080&seq=hero-main-001&orientation=landscape')`,
+        backgroundImage: `url('https://readdy.ai/api/search-image?query=Premium%20Christian%20Academy%20campus%20exterior%2C%20beautiful%20modern%20school%20building%20with%20green%20lawns%2C%20happy%20students%20walking%2C%20warm%20golden%20hour%20lighting%2C%20professional%20architectural%20photography%2C%20cinematic%204k&width=1920&height=1080&seq=hero-main-001&orientation=landscape')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/30"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/60 to-navy/30"></div>
 
       <motion.div
         className="container mx-auto px-4 md:px-8 h-full relative z-10 flex items-center pt-20 lg:pt-24"
@@ -26,22 +26,20 @@ export default function HeroSection() {
       >
         <div className="max-w-4xl text-white">
           <motion.p
-            className="text-[#f7b733] text-sm font-bold uppercase tracking-[0.3em] mb-5"
+            className="text-gold text-sm font-bold uppercase tracking-[0.3em] mb-5 text-glow"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            Calm Mountain Properties
+            Regcos Christian Academy
           </motion.p>
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight tracking-tight max-w-4xl"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.1] tracking-tight max-w-4xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            Titled Plots & Homes,
-            <br />
-            <span className="text-[#f7b733]">Made Simple.</span>
+            The Best Place For Your Kids!
           </motion.h1>
 
           <motion.p
@@ -50,7 +48,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            Browse verified listings, choose a payment option, and book an inspection fast.
+            We are a Christ-centered institution dedicated to nurturing hearts, minds, and futures through academic excellence, strong Christian values, and joyful learning.
           </motion.p>
 
           <motion.div
@@ -60,18 +58,18 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
             <Link
-              href="/listings"
-              className="bg-[#f7b733] hover:bg-[#e6a625] text-[#0a192f] px-10 py-4 font-bold uppercase tracking-wider text-sm transition-all duration-300 inline-flex items-center justify-center gap-2"
+              href="/enroll"
+              className="bg-gold hover:bg-gold-hover text-navy px-10 py-4 font-bold uppercase tracking-wider text-sm transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg shadow-gold/25 rounded-sm hover:scale-105 hover:shadow-gold/40"
             >
-              View Listings
+              Enroll Now
               <ArrowRight size={16} weight="bold" />
             </Link>
 
             <Link
-              href="/contact"
-              className="inline-flex items-center justify-center bg-white/10 text-white hover:bg-white/20 border border-white/30 px-10 py-4 font-bold uppercase tracking-wider text-sm transition-all duration-300"
+              href="/about"
+              className="inline-flex items-center justify-center bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/30 px-10 py-4 font-bold uppercase tracking-wider text-sm transition-all duration-300 rounded-sm hover:scale-105"
             >
-              Talk to an Advisor
+              Learn More
             </Link>
           </motion.div>
         </div>

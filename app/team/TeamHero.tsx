@@ -20,7 +20,6 @@ export default function TeamHero() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        {/* TODO: Replace with professional photo of Calm Mountain Properties leadership team */}
         <motion.h1 
           className="text-5xl md:text-6xl font-bold mb-6"
           initial={{ opacity: 0, y: 20 }}
@@ -37,7 +36,7 @@ export default function TeamHero() {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          Meet the leaders driving Calm Mountain Properties forward
+          Meet the leaders guiding Regcos Christian Academy with faith, wisdom, and care.
         </motion.p>
       </motion.div>
     </section>

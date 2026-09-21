@@ -4,19 +4,44 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Primary blue (replaces navy)
+        primary: {
+          DEFAULT: '#063B82',
+          light: '#0d4fa8',
+          dark: '#022B61',
+        },
+        // Secondary yellow (replaces gold)
+        secondary: {
+          DEFAULT: '#FFD400',
+          hover: '#e6bf00',
+        },
+        // Accent red
+        accent: {
+          DEFAULT: '#D71920',
+          hover: '#b81118',
+        },
+        // Backgrounds
+        bg: {
+          DEFAULT: '#FFFFFF',
+          light: '#F3F5F8',
+        },
+        // Body text
+        body: '#374151',
+
+        // Legacy aliases so older Tailwind classes still resolve
         navy: {
-          DEFAULT: '#0a192f',
-          light: '#112240',
-          lighter: '#233554',
+          DEFAULT: '#063B82',
+          light: '#0d4fa8',
+          lighter: '#3a6abf',
         },
         gold: {
-          DEFAULT: '#f7b733',
-          hover: '#e6a625',
+          DEFAULT: '#FFD400',
+          hover: '#e6bf00',
         },
         cream: {
-          DEFAULT: '#fbfbfb',
-          dark: '#f0f0f0',
-        }
+          DEFAULT: '#F3F5F8',
+          dark: '#e4e8ef',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
@@ -40,4 +65,3 @@ module.exports = {
   },
   plugins: [],
 }
-

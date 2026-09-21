@@ -17,7 +17,7 @@ export default function InnerPageHero({
 }: InnerPageHeroProps) {
   return (
     <section
-      className="relative min-h-[420px] overflow-hidden bg-[#1f2547]"
+      className="relative min-h-[420px] overflow-hidden bg-[#022B61]"
       style={
         backgroundImage
           ? {
@@ -28,11 +28,11 @@ export default function InnerPageHero({
           : undefined
       }
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1f2547]/90 via-[#554e9f]/75 to-[#fda00f]/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#022B61]/90 via-[#554e9f]/75 to-[#FFD400]/25" />
 
       <div className="relative container mx-auto px-4 pt-36 pb-16 md:pt-40 md:pb-20">
         <motion.p
-          className="text-[#fda00f] font-bold text-xs uppercase tracking-[0.3em] mb-5"
+          className="text-[#FFD400] font-bold text-xs uppercase tracking-[0.3em] mb-5"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
@@ -48,7 +48,7 @@ export default function InnerPageHero({
           {title}
         </motion.h1>
         <motion.div
-          className="w-14 h-0.5 bg-[#fda00f] mb-6"
+          className="w-14 h-0.5 bg-[#FFD400] mb-6"
           initial={{ opacity: 0, scaleX: 0 }}
           animate={{ opacity: 1, scaleX: 1 }}
           transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}

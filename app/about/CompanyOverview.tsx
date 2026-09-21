@@ -21,13 +21,13 @@ export default function CompanyOverview() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, margin: '-100px' }}
         >
-          <p className="text-[#0a192f]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">
+          <p className="text-[#063B82]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">
             Who We Are
           </p>
-          <h2 className="text-4xl font-bold text-[#0a192f] uppercase leading-tight mb-4 max-w-2xl">
+          <h2 className="text-4xl font-bold text-[#063B82] uppercase leading-tight mb-4 max-w-2xl">
             About Regcos
           </h2>
-          <div className="w-12 h-0.5 bg-[#f7b733]" />
+          <div className="w-12 h-0.5 bg-[#FFD400]" />
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -38,7 +38,7 @@ export default function CompanyOverview() {
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true, margin: '-80px' }}
           >
-            <h3 className="text-2xl font-bold text-[#0a192f] uppercase mb-6">Our Purpose</h3>
+            <h3 className="text-2xl font-bold text-[#063B82] uppercase mb-6">Our Purpose</h3>
             <p className="text-gray-600 leading-relaxed mb-5">
               Established in March 2023, Regcos Christian Academy is dedicated to providing a comprehensive educational environment that nurtures life-transforming learning and instills sound Christian values.
             </p>
@@ -51,7 +51,7 @@ export default function CompanyOverview() {
                 const Icon = item.icon;
                 return (
                   <li key={item.label} className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-[#0a192f] flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 bg-[#063B82] flex items-center justify-center shrink-0">
                       <Icon size={18} weight="fill" className="text-white" />
                     </div>
                     <span className="text-gray-700 text-sm leading-relaxed pt-2.5">{item.label}</span>
@@ -75,8 +75,8 @@ export default function CompanyOverview() {
               className="w-full h-auto object-cover shadow-lg hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute bottom-6 right-6 flex gap-2">
-              <span className="w-2.5 h-2.5 bg-[#f7b733] block" />
-              <span className="w-2.5 h-2.5 bg-[#0a192f] block opacity-60" />
+              <span className="w-2.5 h-2.5 bg-[#FFD400] block" />
+              <span className="w-2.5 h-2.5 bg-[#063B82] block opacity-60" />
             </div>
           </motion.div>
         </div>

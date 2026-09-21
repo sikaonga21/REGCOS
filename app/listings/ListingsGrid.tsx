@@ -71,19 +71,19 @@ export default function ListingsGrid({ listings }: { listings: ListingItem[] }) 
                         No image
                       </div>
                     )}
-                    <div className="absolute top-4 left-4 bg-[#0a192f] text-white px-3 py-1 text-sm font-semibold">
+                    <div className="absolute top-4 left-4 bg-[#063B82] text-white px-3 py-1 text-sm font-semibold">
                       {badge}
                     </div>
-                    <div className="absolute top-4 right-4 bg-[#f7b733] text-[#0a192f] px-3 py-1 text-sm font-semibold">
+                    <div className="absolute top-4 right-4 bg-[#FFD400] text-[#063B82] px-3 py-1 text-sm font-semibold">
                       {priceLabel}
                     </div>
                   </div>
 
                   <div className="p-8">
-                    <h3 className="text-xl font-semibold text-[#0a192f] mb-2">{listing.title}</h3>
+                    <h3 className="text-xl font-semibold text-[#063B82] mb-2">{listing.title}</h3>
 
                     <div className="flex items-center text-gray-600 mb-3">
-                      <MapPinLine size={16} weight="fill" className="text-[#0a192f] mr-2" />
+                      <MapPinLine size={16} weight="fill" className="text-[#063B82] mr-2" />
                       <span>{listing.location}</span>
                     </div>
 
@@ -92,7 +92,7 @@ export default function ListingsGrid({ listings }: { listings: ListingItem[] }) 
                         {listing.features.slice(0, 4).map((feature, index) => (
                           <span
                             key={`${feature}-${index}`}
-                            className="bg-[#f5f5f5] text-[#0a192f] px-3 py-1 text-sm"
+                            className="bg-[#F3F5F8] text-[#063B82] px-3 py-1 text-sm"
                           >
                             {feature}
                           </span>
@@ -105,14 +105,14 @@ export default function ListingsGrid({ listings }: { listings: ListingItem[] }) 
                     <div className="flex gap-2">
                       <Link
                         href={`/listings/${listing.slug}`}
-                        className="flex-1 bg-[#0a192f] hover:bg-black text-white px-4 py-3 font-semibold transition-all duration-300 text-center cursor-pointer whitespace-nowrap inline-flex items-center justify-center gap-2"
+                        className="flex-1 bg-[#063B82] hover:bg-black text-white px-4 py-3 font-semibold transition-all duration-300 text-center cursor-pointer whitespace-nowrap inline-flex items-center justify-center gap-2"
                       >
                         View Details
                         <ArrowRight size={14} weight="bold" />
                       </Link>
                       <Link
                         href="/contact"
-                        className="border border-[#0a192f] text-[#0a192f] hover:bg-[#0a192f] hover:text-white px-4 py-3 font-semibold transition-all duration-300 cursor-pointer whitespace-nowrap"
+                        className="border border-[#063B82] text-[#063B82] hover:bg-[#063B82] hover:text-white px-4 py-3 font-semibold transition-all duration-300 cursor-pointer whitespace-nowrap"
                       >
                         Contact
                       </Link>

@@ -8,7 +8,7 @@ export default function CTASection() {
   return (
     <section className="flex flex-col lg:flex-row">
       <motion.div
-        className="lg:w-3/5 px-10 py-24 md:px-20 flex flex-col justify-center bg-[#ff9f1c]"
+        className="lg:w-3/5 px-10 py-24 md:px-20 flex flex-col justify-center bg-[#FFD400]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
@@ -26,14 +26,14 @@ export default function CTASection() {
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-2 border border-black px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-black hover:text-[#ff9f1c] transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 border border-black px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-black hover:text-[#FFD400] transition-all duration-300"
           >
             Enroll Now
             <ArrowRight size={16} weight="bold" />
           </Link>
           <Link
             href="/about"
-            className="inline-flex items-center justify-center bg-black text-white px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-[#1f2547] transition-all duration-300"
+            className="inline-flex items-center justify-center bg-black text-white px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-[#022B61] transition-all duration-300"
           >
             Learn More
           </Link>
@@ -41,7 +41,7 @@ export default function CTASection() {
       </motion.div>
 
       <motion.div
-        className="lg:w-2/5 h-64 lg:h-auto overflow-hidden bg-[#1a5f8b] relative"
+        className="lg:w-2/5 h-64 lg:h-auto overflow-hidden bg-[#063B82] relative"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.15 }}

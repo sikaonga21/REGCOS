@@ -34,7 +34,7 @@ export default function TeamGrid() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="text-4xl font-bold text-[#0a192f] mb-6">Meet Our Leadership</h2>
+          <h2 className="text-4xl font-bold text-[#063B82] mb-6">Meet Our Leadership</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Our leadership team is dedicated to creating a safe, nurturing, and faith-filled environment where every child can thrive.
           </p>
@@ -57,8 +57,8 @@ export default function TeamGrid() {
               />
               <div className="p-8">
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-[#0a192f] mb-2">{member.name}</h3>
-                  <p className="text-[#f7b733] font-semibold mb-1">{member.position}</p>
+                  <h3 className="text-2xl font-bold text-[#063B82] mb-2">{member.name}</h3>
+                  <p className="text-[#FFD400] font-semibold mb-1">{member.position}</p>
                   <p className="text-gray-600 text-sm">{member.department} Department</p>
                 </div>
                 
@@ -66,14 +66,14 @@ export default function TeamGrid() {
                 
                 <div className="space-y-3">
                   <div className="flex items-center justify-center">
-                    <i className="ri-phone-line text-[#f7b733] mr-3"></i>
-                    <a href={`tel:${member.phone}`} className="text-gray-700 hover:text-[#f7b733] transition-colors cursor-pointer">
+                    <i className="ri-phone-line text-[#FFD400] mr-3"></i>
+                    <a href={`tel:${member.phone}`} className="text-gray-700 hover:text-[#FFD400] transition-colors cursor-pointer">
                       {member.phone}
                     </a>
                   </div>
                   <div className="flex items-center justify-center">
-                    <i className="ri-mail-line text-[#f7b733] mr-3"></i>
-                    <a href={`mailto:${member.email}`} className="text-gray-700 hover:text-[#f7b733] transition-colors cursor-pointer">
+                    <i className="ri-mail-line text-[#FFD400] mr-3"></i>
+                    <a href={`mailto:${member.email}`} className="text-gray-700 hover:text-[#FFD400] transition-colors cursor-pointer">
                       {member.email}
                     </a>
                   </div>

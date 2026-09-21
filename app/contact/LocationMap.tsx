@@ -7,36 +7,36 @@ export default function LocationMap() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="mb-12">
-          <p className="text-[#0a192f]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">Location</p>
-          <h2 className="text-4xl font-bold text-[#0a192f] uppercase mb-4">Our Location</h2>
-          <div className="w-12 h-0.5 bg-[#f7b733] mb-4" />
+          <p className="text-[#063B82]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">Location</p>
+          <h2 className="text-4xl font-bold text-[#063B82] uppercase mb-4">Our Location</h2>
+          <div className="w-12 h-0.5 bg-[#FFD400] mb-4" />
           <p className="text-lg text-gray-600">
             Visit our campus in Woodlands and meet our team for an admission conversation.
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="bg-[#f5f5f5] p-8 border border-gray-100">
-            <h3 className="text-2xl font-bold text-[#0a192f] mb-6">Campus Location</h3>
+          <div className="bg-[#F3F5F8] p-8 border border-gray-100">
+            <h3 className="text-2xl font-bold text-[#063B82] mb-6">Campus Location</h3>
             <div className="space-y-4">
               <div className="flex items-start">
-                <MapPinLine size={20} weight="fill" className="text-[#0a192f] mr-4 mt-1 shrink-0" />
+                <MapPinLine size={20} weight="fill" className="text-[#063B82] mr-4 mt-1 shrink-0" />
                 <div>
-                  <h4 className="font-semibold text-[#0a192f] mb-1">Address</h4>
+                  <h4 className="font-semibold text-[#063B82] mb-1">Address</h4>
                   <p className="text-gray-700">Stand No. 12305, Woodlands</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <Phone size={20} weight="fill" className="text-[#0a192f] mr-4 mt-1 shrink-0" />
+                <Phone size={20} weight="fill" className="text-[#063B82] mr-4 mt-1 shrink-0" />
                 <div>
-                  <h4 className="font-semibold text-[#0a192f] mb-1">Phone</h4>
+                  <h4 className="font-semibold text-[#063B82] mb-1">Phone</h4>
                   <p className="text-gray-700">+260 975 141 977</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <Clock size={20} weight="fill" className="text-[#0a192f] mr-4 mt-1 shrink-0" />
+                <Clock size={20} weight="fill" className="text-[#063B82] mr-4 mt-1 shrink-0" />
                 <div>
-                  <h4 className="font-semibold text-[#0a192f] mb-1">Business Hours</h4>
+                  <h4 className="font-semibold text-[#063B82] mb-1">Business Hours</h4>
                   <p className="text-gray-700">
                     Monday - Friday: 8:00 AM - 5:00 PM<br/>
                     Saturday: 8:00 AM - 1:00 PM<br/>
@@ -47,19 +47,19 @@ export default function LocationMap() {
             </div>
             
             <div className="mt-8">
-              <h4 className="font-semibold text-[#0a192f] mb-4">How to Get There</h4>
+              <h4 className="font-semibold text-[#063B82] mb-4">How to Get There</h4>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-center">
-                  <Car size={16} weight="fill" className="text-[#0a192f] mr-3" />
+                  <Car size={16} weight="fill" className="text-[#063B82] mr-3" />
                   Parking available on-site
                 </li>
                 <li className="flex items-center">
-                  <Bus size={16} weight="fill" className="text-[#0a192f] mr-3" />
+                  <Bus size={16} weight="fill" className="text-[#063B82] mr-3" />
                   Public transport accessible
                 </li>
                 <li className="flex items-center">
-                  <MapPinLine size={16} weight="fill" className="text-[#0a192f] mr-3" />
-                  <a href="https://maps.app.goo.gl/ARU2uudKDacEDi6F7" target="_blank" rel="noopener noreferrer" className="text-[#0a192f] hover:underline font-semibold">
+                  <MapPinLine size={16} weight="fill" className="text-[#063B82] mr-3" />
+                  <a href="https://maps.app.goo.gl/ARU2uudKDacEDi6F7" target="_blank" rel="noopener noreferrer" className="text-[#063B82] hover:underline font-semibold">
                     View on Google Maps
                   </a>
                 </li>

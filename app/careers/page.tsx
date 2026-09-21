@@ -58,11 +58,11 @@ export default function CareersPage() {
                 transition={{ duration: 0.6, ease: 'easeOut' }}
                 viewport={{ once: true, margin: '-80px' }}
               >
-                <p className="text-[#0a192f]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">
+                <p className="text-[#063B82]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">
                   Open Roles
                 </p>
-                <h2 className="text-4xl font-bold text-[#0a192f] uppercase mb-4">Current Openings</h2>
-                <div className="w-12 h-0.5 bg-[#f7b733] mb-4" />
+                <h2 className="text-4xl font-bold text-[#063B82] uppercase mb-4">Current Openings</h2>
+                <div className="w-12 h-0.5 bg-[#FFD400] mb-4" />
                 <p className="text-gray-600 max-w-3xl">
                   All positions are based in Zambia. Roles are subject to change as we grow.
                 </p>
@@ -97,12 +97,12 @@ export default function CareersPage() {
                     viewport={{ once: true, margin: '-80px' }}
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="w-2 h-8 bg-[#f7b733] rounded-full" />
+                      <span className="w-2 h-8 bg-[#FFD400] rounded-full" />
                       <span className="text-xs font-semibold uppercase tracking-wider text-gray-500">
                         {job.department} · {job.type}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-[#0a192f] mb-3">{job.title}</h3>
+                    <h3 className="text-xl font-bold text-[#063B82] mb-3">{job.title}</h3>
                     <p className="text-gray-600 mb-4">
                       <span className="font-semibold text-gray-700">{job.location}</span>
                     </p>
@@ -110,12 +110,12 @@ export default function CareersPage() {
                     <p className="text-gray-700 leading-relaxed mb-5">{job.description}</p>
 
                     <div className="mb-5">
-                      <p className="text-sm font-semibold text-[#0a192f] mb-2">Requirements</p>
+                      <p className="text-sm font-semibold text-[#063B82] mb-2">Requirements</p>
                       {job.requirements?.length ? (
                         <ul className="space-y-2">
                           {job.requirements.map((r, i) => (
                             <li key={`${r}-${i}`} className="flex items-start gap-2 text-gray-700">
-                              <span className="mt-2 w-1.5 h-1.5 bg-[#f7b733] rounded-full shrink-0" />
+                              <span className="mt-2 w-1.5 h-1.5 bg-[#FFD400] rounded-full shrink-0" />
                               <span>{r}</span>
                             </li>
                           ))}
@@ -128,7 +128,7 @@ export default function CareersPage() {
                     <div className="border-t border-gray-100 pt-4">
                       <a
                         href="/contact"
-                        className="inline-flex items-center justify-center w-full bg-[#0a192f] hover:bg-black text-white px-4 py-3 font-semibold transition-colors cursor-pointer uppercase tracking-[0.15em] text-sm"
+                        className="inline-flex items-center justify-center w-full bg-[#063B82] hover:bg-black text-white px-4 py-3 font-semibold transition-colors cursor-pointer uppercase tracking-[0.15em] text-sm"
                       >
                         Apply via Contact Form
                       </a>

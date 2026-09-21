@@ -59,13 +59,13 @@ export default function ServicesList() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, margin: '-100px' }}
         >
-          <p className="text-[#0a192f]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">
+          <p className="text-[#063B82]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">
             Full Offering
           </p>
-          <h2 className="text-4xl font-bold text-[#0a192f] uppercase leading-tight mb-4">
+          <h2 className="text-4xl font-bold text-[#063B82] uppercase leading-tight mb-4">
             Our Programs
           </h2>
-          <div className="w-12 h-0.5 bg-[#f7b733] mb-4" />
+          <div className="w-12 h-0.5 bg-[#FFD400] mb-4" />
           <p className="text-lg text-gray-600 max-w-2xl">
             We create a joyful, faith-filled learning experience that helps each child grow in knowledge, character, and confidence.
           </p>
@@ -77,17 +77,17 @@ export default function ServicesList() {
             return (
               <motion.div
                 key={service.title}
-                className="bg-white p-10 flex flex-col group hover:bg-[#f5f5f5] transition-colors"
+                className="bg-white p-10 flex flex-col group hover:bg-[#F3F5F8] transition-colors"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.08, ease: 'easeOut' }}
                 viewport={{ once: true, margin: '-50px' }}
               >
                 {/* Dark icon box */}
-                <div className="w-11 h-11 bg-[#0a192f] flex items-center justify-center mb-6 group-hover:bg-[#f7b733] transition-colors">
+                <div className="w-11 h-11 bg-[#063B82] flex items-center justify-center mb-6 group-hover:bg-[#FFD400] transition-colors">
                   <Icon size={20} weight="fill" className="text-white" />
                 </div>
-                <h3 className="font-bold text-[#0a192f] text-sm uppercase tracking-wider mb-4">
+                <h3 className="font-bold text-[#063B82] text-sm uppercase tracking-wider mb-4">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
@@ -96,7 +96,7 @@ export default function ServicesList() {
                 <ul className="space-y-2">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-2.5">
-                      <Check size={12} weight="bold" className="text-[#0a192f] shrink-0" />
+                      <Check size={12} weight="bold" className="text-[#063B82] shrink-0" />
                       <span className="text-xs text-gray-600">{feature}</span>
                     </li>
                   ))}

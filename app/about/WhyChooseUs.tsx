@@ -44,7 +44,7 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 bg-[#0a192f]">
+    <section className="py-20 bg-[#063B82]">
       <div className="container mx-auto px-4">
         <motion.div
           className="mb-16"
@@ -53,13 +53,13 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, margin: '-100px' }}
         >
-          <p className="text-[#f7b733] font-bold text-xs uppercase tracking-[0.3em] mb-4">
+          <p className="text-[#FFD400] font-bold text-xs uppercase tracking-[0.3em] mb-4">
             Our Commitment
           </p>
           <h2 className="text-4xl font-bold text-white uppercase leading-tight mb-4">
             Why Choose Regcos?
           </h2>
-          <div className="w-12 h-0.5 bg-[#f7b733]" />
+          <div className="w-12 h-0.5 bg-[#FFD400]" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
@@ -68,14 +68,14 @@ export default function WhyChooseUs() {
             return (
               <motion.div
                 key={reason.title}
-                className="bg-[#0a192f] p-10 flex flex-col group hover:bg-white/5 transition-colors"
+                className="bg-[#063B82] p-10 flex flex-col group hover:bg-white/5 transition-colors"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
                 viewport={{ once: true, margin: '-50px' }}
               >
-                <div className="w-11 h-11 bg-[#f7b733]/15 flex items-center justify-center mb-6 group-hover:bg-[#f7b733]/25 transition-colors">
-                  <Icon size={20} weight="fill" className="text-[#f7b733]" />
+                <div className="w-11 h-11 bg-[#FFD400]/15 flex items-center justify-center mb-6 group-hover:bg-[#FFD400]/25 transition-colors">
+                  <Icon size={20} weight="fill" className="text-[#FFD400]" />
                 </div>
                 <h3 className="font-bold text-white text-xs uppercase tracking-wider mb-4">
                   {reason.title}
@@ -92,14 +92,14 @@ export default function WhyChooseUs() {
             return (
               <motion.div
                 key={reason.title}
-                className="bg-[#0a192f] p-10 flex flex-col group hover:bg-white/5 transition-colors"
+                className="bg-[#063B82] p-10 flex flex-col group hover:bg-white/5 transition-colors"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
                 viewport={{ once: true, margin: '-50px' }}
               >
-                <div className="w-11 h-11 bg-[#f7b733]/15 flex items-center justify-center mb-6 group-hover:bg-[#f7b733]/25 transition-colors">
-                  <Icon size={20} weight="fill" className="text-[#f7b733]" />
+                <div className="w-11 h-11 bg-[#FFD400]/15 flex items-center justify-center mb-6 group-hover:bg-[#FFD400]/25 transition-colors">
+                  <Icon size={20} weight="fill" className="text-[#FFD400]" />
                 </div>
                 <h3 className="font-bold text-white text-xs uppercase tracking-wider mb-4">
                   {reason.title}

@@ -8,7 +8,7 @@ export default function ServicesCTA() {
   return (
     <section className="flex flex-col lg:flex-row">
       <motion.div
-        className="lg:w-3/5 px-10 py-24 md:px-20 flex flex-col justify-center bg-[#f7b733]"
+        className="lg:w-3/5 px-10 py-24 md:px-20 flex flex-col justify-center bg-[#FFD400]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
@@ -26,14 +26,14 @@ export default function ServicesCTA() {
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-2 border border-black px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-black hover:text-[#f7b733] transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 border border-black px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-black hover:text-[#FFD400] transition-all duration-300"
           >
             Enroll Now
             <ArrowRight size={16} weight="bold" />
           </Link>
           <Link
             href="/about"
-            className="inline-flex items-center justify-center bg-black text-white px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-[#0a192f] transition-all duration-300"
+            className="inline-flex items-center justify-center bg-black text-white px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-[#063B82] transition-all duration-300"
           >
             Learn More
           </Link>
@@ -41,7 +41,7 @@ export default function ServicesCTA() {
       </motion.div>
 
       <motion.div
-        className="lg:w-2/5 h-64 lg:h-auto overflow-hidden bg-[#0a192f] relative"
+        className="lg:w-2/5 h-64 lg:h-auto overflow-hidden bg-[#063B82] relative"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.15 }}

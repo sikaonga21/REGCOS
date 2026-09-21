@@ -74,13 +74,13 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-20 bg-[#f5f5f5]">
+    <section className="py-20 bg-[#F3F5F8]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="mb-12">
-            <p className="text-[#0a192f]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">Send a Message</p>
-            <h2 className="text-4xl font-bold text-[#0a192f] uppercase mb-4">Tell Us What You Need</h2>
-            <div className="w-12 h-0.5 bg-[#f7b733] mb-4" />
+            <p className="text-[#063B82]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">Send a Message</p>
+            <h2 className="text-4xl font-bold text-[#063B82] uppercase mb-4">Tell Us What You Need</h2>
+            <div className="w-12 h-0.5 bg-[#FFD400] mb-4" />
             <p className="text-lg text-gray-600">
               Fill out the form below and we'll get back to you as soon as possible
             </p>
@@ -96,7 +96,7 @@ export default function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#0a192f] transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#063B82] transition-colors"
                 />
               </div>
               <div>
@@ -107,7 +107,7 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#0a192f] transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#063B82] transition-colors"
                 />
               </div>
             </div>
@@ -121,7 +121,7 @@ export default function ContactForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#0a192f] transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#063B82] transition-colors"
                 />
               </div>
               <div>
@@ -132,7 +132,7 @@ export default function ContactForm() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full appearance-none bg-white border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:border-[#0a192f] transition-colors"
+                    className="w-full appearance-none bg-white border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:border-[#063B82] transition-colors"
                   >
                     <option value="">Select Subject</option>
                     {['General Inquiry', 'Enrollment', 'School Tour', 'Scholarship Support', 'Admissions Support', 'Other'].map(subject => (
@@ -152,7 +152,7 @@ export default function ContactForm() {
                     name="program"
                     value={formData.program}
                     onChange={handleChange}
-                    className="w-full appearance-none bg-white border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:border-[#0a192f] transition-colors"
+                    className="w-full appearance-none bg-white border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:border-[#063B82] transition-colors"
                   >
                     <option value="">Not Sure Yet</option>
                     <option value="Nursery">Nursery</option>
@@ -171,7 +171,7 @@ export default function ContactForm() {
                     name="childAge"
                     value={formData.childAge}
                     onChange={handleChange}
-                    className="w-full appearance-none bg-white border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:border-[#0a192f] transition-colors"
+                    className="w-full appearance-none bg-white border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:border-[#063B82] transition-colors"
                   >
                     <option value="">Not Sure Yet</option>
                     <option value="2-3 years">2-3 years</option>
@@ -194,7 +194,7 @@ export default function ContactForm() {
                 required
                 maxLength={500}
                 rows={6}
-                className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#0a192f] transition-colors resize-none"
+                className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#063B82] transition-colors resize-none"
                 placeholder="Tell us about your requirements, questions, or any specific needs..."
               />
               <div className="text-right text-sm text-gray-500 mt-1">
@@ -211,7 +211,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-[#0a192f] text-white px-8 py-4 hover:bg-black transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap font-semibold uppercase tracking-[0.18em] text-sm"
+              className="w-full bg-[#063B82] text-white px-8 py-4 hover:bg-black transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap font-semibold uppercase tracking-[0.18em] text-sm"
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>

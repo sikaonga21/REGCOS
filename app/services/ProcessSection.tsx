@@ -32,7 +32,7 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="py-20 bg-[#0a192f]">
+    <section className="py-20 bg-[#063B82]">
       <div className="container mx-auto px-4">
         <motion.div
           className="mb-16"
@@ -41,13 +41,13 @@ export default function ProcessSection() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, margin: '-100px' }}
         >
-          <p className="text-[#f7b733] font-bold text-xs uppercase tracking-[0.3em] mb-4">
+          <p className="text-[#FFD400] font-bold text-xs uppercase tracking-[0.3em] mb-4">
             How It Works
           </p>
           <h2 className="text-4xl font-bold text-white uppercase leading-tight mb-4">
             Our Process
           </h2>
-          <div className="w-12 h-0.5 bg-[#f7b733] mb-4" />
+          <div className="w-12 h-0.5 bg-[#FFD400] mb-4" />
           <p className="text-white/60 max-w-2xl text-sm leading-relaxed">
             A streamlined approach to make your property acquisition journey smooth and hassle-free.
           </p>
@@ -57,15 +57,15 @@ export default function ProcessSection() {
           {steps.map((step, index) => (
             <motion.div
               key={step.number}
-              className="bg-[#0a192f] p-10 flex flex-col group hover:bg-white/5 transition-colors"
+              className="bg-[#063B82] p-10 flex flex-col group hover:bg-white/5 transition-colors"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
               viewport={{ once: true, margin: '-50px' }}
             >
               {/* Number badge */}
-              <div className="w-11 h-11 bg-[#f7b733] flex items-center justify-center mb-6 shrink-0">
-                <span className="text-[#0a192f] font-bold text-sm">{step.number}</span>
+              <div className="w-11 h-11 bg-[#FFD400] flex items-center justify-center mb-6 shrink-0">
+                <span className="text-[#063B82] font-bold text-sm">{step.number}</span>
               </div>
               <h3 className="font-bold text-white text-xs uppercase tracking-wider mb-4">
                 {step.title}

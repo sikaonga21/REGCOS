@@ -35,10 +35,10 @@ export default function DepartmentOverview() {
   ];
 
   return (
-    <section className="py-20 bg-[#f5f5f5]">
+    <section className="py-20 bg-[#F3F5F8]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#0a192f] mb-6">Our Support Teams</h2>
+          <h2 className="text-4xl font-bold text-[#063B82] mb-6">Our Support Teams</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Every team works together to create a nurturing, faith-led school environment where children can flourish.
           </p>
@@ -47,17 +47,17 @@ export default function DepartmentOverview() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {departments.map((dept, index) => (
             <div key={index} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-[#f7b733] rounded-full flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-[#FFD400] rounded-full flex items-center justify-center mb-6">
                 <i className={`${dept.icon} text-2xl text-white`}></i>
               </div>
-              <h3 className="text-xl font-bold text-[#0a192f] mb-4">{dept.name}</h3>
+              <h3 className="text-xl font-bold text-[#063B82] mb-4">{dept.name}</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">{dept.description}</p>
               <div>
-                <h4 className="font-semibold text-[#0a192f] mb-3">Key Responsibilities:</h4>
+                <h4 className="font-semibold text-[#063B82] mb-3">Key Responsibilities:</h4>
                 <ul className="space-y-2">
                   {dept.responsibilities.map((responsibility, respIndex) => (
                     <li key={respIndex} className="flex items-center text-gray-700">
-                      <i className="ri-check-line text-[#f7b733] mr-2"></i>
+                      <i className="ri-check-line text-[#FFD400] mr-2"></i>
                       {responsibility}
                     </li>
                   ))}

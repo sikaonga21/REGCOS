@@ -54,10 +54,10 @@ export default function EstateDetail({ listing }: EstateDetailProps) {
     <div className="min-h-screen">
       <Header />
       <main>
-        <section className="py-12 bg-[#f5f5f5]">
+        <section className="py-12 bg-[#F3F5F8]">
           <div className="container mx-auto px-4">
             <div className="mb-8">
-              <Link href="/listings" className="text-[#f7b733] hover:text-[#e6a82d] transition-colors cursor-pointer">
+              <Link href="/listings" className="text-[#FFD400] hover:text-[#e6bf00] transition-colors cursor-pointer">
                 <i className="ri-arrow-left-line mr-2"></i>
                 Back to Listings
               </Link>
@@ -86,13 +86,13 @@ export default function EstateDetail({ listing }: EstateDetailProps) {
 
                 <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
                   <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <h1 className="text-4xl font-bold text-[#0a192f]">{listing.title}</h1>
-                    <span className="bg-[#f7b733] text-[#0a192f] px-3 py-1 rounded-full text-sm font-semibold whitespace-nowrap">
+                    <h1 className="text-4xl font-bold text-[#063B82]">{listing.title}</h1>
+                    <span className="bg-[#FFD400] text-[#063B82] px-3 py-1 rounded-full text-sm font-semibold whitespace-nowrap">
                       {transactionLabel} · {listingKindLabel}
                     </span>
                   </div>
 
-                  <p className="text-[#f7b733] font-semibold mb-6 flex items-center text-lg">
+                  <p className="text-[#FFD400] font-semibold mb-6 flex items-center text-lg">
                     <i className="ri-map-pin-line mr-2"></i>
                     {listing.location}
                   </p>
@@ -100,11 +100,11 @@ export default function EstateDetail({ listing }: EstateDetailProps) {
                   
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h3 className="text-2xl font-bold text-[#0a192f] mb-4">Features</h3>
+                      <h3 className="text-2xl font-bold text-[#063B82] mb-4">Features</h3>
                       <ul className="space-y-2">
                         {(listing.features ?? []).map((feature, index) => (
                           <li key={index} className="flex items-center text-gray-700">
-                            <i className="ri-check-line text-[#f7b733] mr-3"></i>
+                            <i className="ri-check-line text-[#FFD400] mr-3"></i>
                             {feature}
                           </li>
                         ))}
@@ -115,18 +115,18 @@ export default function EstateDetail({ listing }: EstateDetailProps) {
                 </div>
 
                 <div className="bg-white rounded-lg shadow-lg p-8">
-                  <h3 className="text-2xl font-bold text-[#0a192f] mb-6">Pricing</h3>
+                  <h3 className="text-2xl font-bold text-[#063B82] mb-6">Pricing</h3>
                   {pricingRows.length ? (
                     <div className="space-y-3">
                       {pricingRows.map((row, idx) => (
-                        <div key={idx} className="flex justify-between items-center p-4 bg-[#f5f5f5] rounded-lg">
+                        <div key={idx} className="flex justify-between items-center p-4 bg-[#F3F5F8] rounded-lg">
                           <span className="text-gray-700">{row.label}</span>
-                          <span className="font-semibold text-[#0a192f]">{row.value}</span>
+                          <span className="font-semibold text-[#063B82]">{row.value}</span>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <pre className="text-sm text-gray-700 bg-[#f5f5f5] border border-gray-100 rounded-lg p-4 overflow-auto">
+                    <pre className="text-sm text-gray-700 bg-[#F3F5F8] border border-gray-100 rounded-lg p-4 overflow-auto">
                       {JSON.stringify(listing.pricing ?? {}, null, 2)}
                     </pre>
                   )}
@@ -135,17 +135,17 @@ export default function EstateDetail({ listing }: EstateDetailProps) {
 
               <div className="lg:col-span-1">
                 <div className="bg-white rounded-lg shadow-lg p-8 sticky top-24">
-                  <h3 className="text-2xl font-bold text-[#0a192f] mb-6">Interested?</h3>
+                  <h3 className="text-2xl font-bold text-[#063B82] mb-6">Interested?</h3>
                   <div className="mt-2 space-y-4">
                     <Link
                       href="/contact"
-                      className="w-full bg-[#f7b733] text-white px-6 py-4 rounded-lg hover:bg-[#e6a82d] transition-colors cursor-pointer text-center block whitespace-nowrap"
+                      className="w-full bg-[#FFD400] text-white px-6 py-4 rounded-lg hover:bg-[#e6bf00] transition-colors cursor-pointer text-center block whitespace-nowrap"
                     >
                       {listing.transaction_type === 'sale' ? 'Contact for Purchase' : 'Contact for Viewing'}
                     </Link>
                     <Link
                       href="/contact"
-                      className="w-full border-2 border-[#f7b733] text-[#f7b733] px-6 py-4 rounded-lg hover:bg-[#f7b733] hover:text-white transition-colors cursor-pointer text-center block whitespace-nowrap"
+                      className="w-full border-2 border-[#FFD400] text-[#FFD400] px-6 py-4 rounded-lg hover:bg-[#FFD400] hover:text-white transition-colors cursor-pointer text-center block whitespace-nowrap"
                     >
                       {listing.transaction_type === 'sale' ? 'Schedule Site Visit' : 'Request Lease Details'}
                     </Link>

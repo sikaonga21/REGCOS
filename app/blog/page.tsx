@@ -1,14 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, CalendarBlank, Tag, MagnifyingGlass, BookOpen } from 'phosphor-react';
+import { ArrowRight, CalendarBlank, MagnifyingGlass, BookOpen } from 'phosphor-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import { supabase } from '@/lib/supabase';
+import { blogPlaceholderImages } from '@/lib/blog-placeholder-data';
 
-const blogPosts = [
+const fallbackPosts = [
   {
     id: 1,
     slug: 'faith-and-learning',
@@ -80,12 +82,46 @@ const blogPosts = [
 const categories = ['All', 'Faith & Values', 'Academic Life', 'Sports & Wellbeing', 'Arts & Creativity', 'Community', 'Admissions'];
 
 export default function BlogPage() {
+  const [posts, setPosts] = useState<any[]>(fallbackPosts);
+  const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState('All');
   const [search, setSearch] = useState('');
 
-  const filtered = blogPosts.filter((post) => {
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      try {
+        const { data, error } = await supabase.from('blog_posts').select('*').eq('status', 'published').order('published_at', { ascending: false });
+
+        if (!error && data && data.length > 0) {
+          const mapped = data.map((post, index) => ({
+            id: post.id,
+            slug: post.slug,
+            category: post.category || categories[index % categories.length],
+            title: post.title,
+            excerpt: post.excerpt || post.content?.slice(0, 180) || 'Read the full story.',
+            date: post.published_at ? new Date(post.published_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : 'Recently',
+            author: 'Regcos Team',
+            image: post.featured_image || blogPlaceholderImages[index % blogPlaceholderImages.length],
+            readTime: '4 min read',
+          }));
+          setPosts(mapped);
+        } else {
+          setPosts(fallbackPosts);
+        }
+      } catch {
+        setPosts(fallbackPosts);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    void fetchPosts();
+  }, []);
+
+  const filtered = posts.filter((post) => {
     const matchCat = activeCategory === 'All' || post.category === activeCategory;
-    const matchSearch = post.title.toLowerCase().includes(search.toLowerCase()) || post.excerpt.toLowerCase().includes(search.toLowerCase());
+    const matchSearch = (post.title || '').toLowerCase().includes(search.toLowerCase()) || (post.excerpt || '').toLowerCase().includes(search.toLowerCase());
     return matchCat && matchSearch;
   });
 
@@ -158,7 +194,7 @@ export default function BlogPage() {
           </motion.div>
 
           {/* Featured Post (first card, large) */}
-          {filtered.length > 0 && (
+          {!loading && filtered.length > 0 && (
             <motion.div
               className="mb-12"
               initial={{ opacity: 0, y: 30 }}
@@ -202,7 +238,7 @@ export default function BlogPage() {
           )}
 
           {/* Rest of Posts Grid */}
-          {filtered.length > 1 && (
+          {!loading && filtered.length > 1 && (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filtered.slice(1).map((post, index) => (
                 <motion.div
@@ -247,11 +283,15 @@ export default function BlogPage() {
           )}
 
           {/* No Results */}
-          {filtered.length === 0 && (
+          {!loading && filtered.length === 0 && (
             <div className="text-center py-24 text-gray-400">
               <BookOpen size={48} className="mx-auto mb-4 opacity-30" />
               <p className="text-lg font-medium">No posts found. Try a different search or category.</p>
             </div>
+          )}
+
+          {loading && (
+            <div className="py-12 text-center text-slate-600">Loading blog posts...</div>
           )}
         </div>
       </main>

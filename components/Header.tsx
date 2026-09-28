@@ -54,7 +54,7 @@ export default function Header() {
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
     { name: 'Our Philosophy', href: '/services' },
-    { name: 'Calendar', href: '/listings' },
+    { name: 'Calendar', href: '/calendar' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact Us', href: '/contact' },
   ];

@@ -7,6 +7,11 @@ import { useEffect, useMemo, useState } from 'react';
 import { ArrowRight, Buildings, HouseLine, MapPinLine } from 'phosphor-react';
 import { supabase, type ListingItem } from '@/lib/supabase';
 
+const isMissingListingsTableError = (error: any) => {
+  const message = error?.message || '';
+  return message.includes('real_estate_listings') || message.includes('Could not find the table');
+};
+
 export default function FeaturedListings() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -24,9 +29,20 @@ export default function FeaturedListings() {
           .eq('published', true)
           .order('sort_order', { ascending: true })
           .limit(3);
-        if (fetchError) throw fetchError;
+        if (fetchError) {
+          if (isMissingListingsTableError(fetchError)) {
+            setListings([]);
+            return;
+          }
+          throw fetchError;
+        }
         setListings((data ?? []) as ListingItem[]);
       } catch (e: any) {
+        if (isMissingListingsTableError(e)) {
+          setListings([]);
+          setError(null);
+          return;
+        }
         setError(e?.message ?? 'Failed to load listings');
       } finally {
         setLoading(false);

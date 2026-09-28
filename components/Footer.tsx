@@ -51,7 +51,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/listings" className="text-gray-300 hover:text-[#FFD400] transition-colors cursor-pointer">
+                <Link href="/calendar" className="text-gray-300 hover:text-[#FFD400] transition-colors cursor-pointer">
                   Calendar
                 </Link>
               </li>

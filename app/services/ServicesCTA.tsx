@@ -48,9 +48,9 @@ export default function ServicesCTA() {
         viewport={{ once: true, margin: '-100px' }}
       >
         <img
-          src="/images/estates/greatnorth-estate.png"
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
           alt="Regcos Christian Academy services"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-90"
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-white/10 text-7xl font-bold uppercase tracking-widest">RCA</div>

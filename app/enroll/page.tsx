@@ -12,15 +12,21 @@ export default function EnrollPage() {
       <Header />
       
       {/* Hero Header for Enrollment Page */}
-      <div className="pt-32 pb-16 bg-navy relative overflow-hidden">
-        {/* Abstract Background pattern */}
-        <div className="absolute inset-0 opacity-10">
+      <div
+        className="pt-32 pb-16 relative overflow-hidden bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1800&q=80')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/35" />
+        <div className="absolute inset-0 opacity-15">
           <div className="absolute top-0 right-0 w-96 h-96 bg-gold rounded-full mix-blend-screen filter blur-[100px]" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-screen filter blur-[100px]" />
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
+          <motion.div
             className="text-center max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -29,7 +35,7 @@ export default function EnrollPage() {
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Begin Your Journey
             </h1>
-            <p className="text-xl text-gray-300">
+            <p className="text-xl text-white/80">
               Join Regcos Christian Academy and give your child a foundation of faith, character, and academic excellence.
             </p>
           </motion.div>

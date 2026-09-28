@@ -59,7 +59,7 @@ export default function AboutPreview() {
             viewport={{ once: true, margin: "-100px" }}
           >
             <img
-              src="/images/peview-png.png"
+              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80"
               alt="Regcos Christian Academy overview"
               className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
             />

@@ -17,18 +17,19 @@ export default function InnerPageHero({
 }: InnerPageHeroProps) {
   return (
     <section
-      className="relative min-h-[420px] overflow-hidden bg-[#022B61]"
+      className="relative min-h-[420px] overflow-hidden bg-[#0d0d0d]"
       style={
         backgroundImage
           ? {
               backgroundImage: `url('${backgroundImage}')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
             }
           : undefined
       }
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-[#022B61]/90 via-[#554e9f]/75 to-[#FFD400]/25" />
+      <div className="absolute inset-0 bg-black/20" />
 
       <div className="relative container mx-auto px-4 pt-36 pb-16 md:pt-40 md:pb-20">
         <motion.p
@@ -55,7 +56,7 @@ export default function InnerPageHero({
           style={{ originX: 0 }}
         />
         <motion.p
-          className="max-w-2xl text-lg md:text-xl text-white/75 leading-relaxed"
+          className="max-w-2xl text-lg md:text-xl text-white/85 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25, ease: 'easeOut' }}

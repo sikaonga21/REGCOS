@@ -1,28 +1,58 @@
 
 'use client';
 
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'phosphor-react';
 
+const slides = [
+  {
+    url: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80',
+    alt: 'Students playing outside at school',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1600&q=80',
+    alt: 'Children learning together in a bright classroom',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1600&q=80',
+    alt: 'Happy school children at the playground',
+  },
+];
+
 export default function HeroSection() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section
-      className="relative h-screen w-full min-w-0 overflow-hidden bg-navy"
-      style={{
-        backgroundImage: `url('https://readdy.ai/api/search-image?query=Premium%20Christian%20Academy%20campus%20exterior%2C%20beautiful%20modern%20school%20building%20with%20green%20lawns%2C%20happy%20students%20walking%2C%20warm%20golden%20hour%20lighting%2C%20professional%20architectural%20photography%2C%20cinematic%204k&width=1920&height=1080&seq=hero-main-001&orientation=landscape')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
-      <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/60 to-navy/30"></div>
+    <section className="relative h-screen w-full min-w-0 overflow-hidden bg-[#f5f7fb]">
+      <div className="absolute inset-0">
+        {slides.map((slide, index) => (
+          <div
+            key={slide.url}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+              index === activeSlide ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={{ backgroundImage: `url('${slide.url}')` }}
+            aria-label={slide.alt}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/20 to-black/30" />
+      </div>
 
       <motion.div
         className="container mx-auto px-4 md:px-8 h-full relative z-10 flex items-center pt-20 lg:pt-24"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         <div className="max-w-4xl text-white">
           <motion.p
@@ -37,16 +67,16 @@ export default function HeroSection() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.1] tracking-tight max-w-4xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           >
             The Best Place For Your Kids!
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-xl text-white/80 font-light leading-relaxed mb-10 max-w-3xl"
+            className="text-lg md:text-xl text-white/85 font-light leading-relaxed mb-10 max-w-3xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
           >
             We are a Christ-centered institution dedicated to nurturing hearts, minds, and futures through academic excellence, strong Christian values, and joyful learning.
           </motion.p>
@@ -55,7 +85,7 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
           >
             <Link
               href="/enroll"
@@ -74,6 +104,20 @@ export default function HeroSection() {
           </motion.div>
         </div>
       </motion.div>
+
+      <div className="absolute bottom-7 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+        {slides.map((slide, index) => (
+          <button
+            key={slide.url}
+            type="button"
+            onClick={() => setActiveSlide(index)}
+            aria-label={`Show slide ${index + 1}`}
+            className={`h-2.5 rounded-full transition-all duration-300 ${
+              index === activeSlide ? 'w-10 bg-gold' : 'w-2.5 bg-white/70 hover:bg-white'
+            }`}
+          />
+        ))}
+      </div>
     </section>
   );
 }

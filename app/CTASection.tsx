@@ -48,9 +48,9 @@ export default function CTASection() {
         viewport={{ once: true, margin: '-100px' }}
       >
         <img
-          src="/images/estates/paramount-estate.jpeg"
+          src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80"
           alt="Regcos Christian Academy campus"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-90"
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-white/15 text-7xl font-bold uppercase tracking-widest">RCA</div>

@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://calmmountainproperties.com/sitemap.xml',
+    sitemap: 'https://regcos.com/sitemap.xml',
   }
 } 

@@ -13,7 +13,7 @@ export default function ServicesPreview() {
       description:
         'Passionate, caring educators who inspire excellence, character, and a love for learning in every child.',
       points: ['Dedicated guidance', 'Strong mentorship', 'Joyful learning'],
-      image: 'https://readdy.ai/api/search-image?query=passionate%20teacher%20with%20students%20in%20bright%20classroom%2C%20happy%20learning%20environment%2C%20modern%20school%20classroom%2C%20warm%20natural%20lighting%2C%20cinematic%20photography&width=1200&height=800&seq=school-service-1&orientation=landscape',
+      image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80',
       reverse: false,
     },
     {
@@ -23,7 +23,7 @@ export default function ServicesPreview() {
       description:
         'Where creativity finds its rhythm and young talents are nurtured in our state-of-the-art music program.',
       points: ['Talent development', 'Creative confidence', 'Arts enrichment'],
-      image: 'https://readdy.ai/api/search-image?query=children%20learning%20music%20in%20school%20music%20room%2C%20happy%20young%20students%20playing%20instruments%2C%20bright%20creative%20school%20environment%2C%20premium%20photography&width=1200&height=800&seq=school-service-2&orientation=landscape',
+      image: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=80',
       reverse: true,
     },
     {
@@ -33,7 +33,7 @@ export default function ServicesPreview() {
       description:
         'Building strong bodies, teamwork, and confidence through fun and structured sports activities.',
       points: ['Teamwork', 'Healthy habits', 'Confidence building'],
-      image: 'https://readdy.ai/api/search-image?query=school%20students%20playing%20sports%20together%20on%20field%2C%20teamwork%2C%20healthy%20active%20children%2C%20youthful%20school%20athletics%2C%20golden%20hour&width=1200&height=800&seq=school-service-3&orientation=landscape',
+      image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=80',
       reverse: false,
     },
   ];

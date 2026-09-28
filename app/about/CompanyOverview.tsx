@@ -70,7 +70,7 @@ export default function CompanyOverview() {
             viewport={{ once: true, margin: '-80px' }}
           >
             <img
-              src="/images/about-png.png"
+              src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80"
               alt="About Regcos Christian Academy"
               className="w-full h-auto object-cover shadow-lg hover:scale-105 transition-transform duration-700"
             />

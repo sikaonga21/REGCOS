@@ -46,7 +46,7 @@ export default function CareersPage() {
           eyebrow="Join Our Team"
           title="Careers at Regcos Christian Academy"
           description="Explore current openings and discover where your experience can support a Christ-centered school community, student growth, and educational excellence across Zambia."
-          backgroundImage="/images/team-hero.jpg"
+          backgroundImage="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80"
         />
 
         <section className="py-16 bg-white">

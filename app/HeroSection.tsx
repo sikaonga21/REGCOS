@@ -16,7 +16,7 @@ const slides = [
     alt: 'Children learning together in a bright classroom',
   },
   {
-    url: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1600&q=80',
+    url: 'images/musicski.jpeg',
     alt: 'Happy school children at the playground',
   },
 ];

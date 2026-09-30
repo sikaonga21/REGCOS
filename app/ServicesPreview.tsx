@@ -13,7 +13,7 @@ export default function ServicesPreview() {
       description:
         'Passionate, caring educators who inspire excellence, character, and a love for learning in every child.',
       points: ['Dedicated guidance', 'Strong mentorship', 'Joyful learning'],
-      image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80',
+      image: 'images/teacture.jpeg',
       reverse: false,
     },
     {
@@ -23,9 +23,11 @@ export default function ServicesPreview() {
       description:
         'Where creativity finds its rhythm and young talents are nurtured in our state-of-the-art music program.',
       points: ['Talent development', 'Creative confidence', 'Arts enrichment'],
-      image: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=80',
+      image: 'images/music.jpeg',
       reverse: true,
     },
+
+    
     {
       icon: FileText,
       eyebrow: 'Growth',
@@ -35,6 +37,18 @@ export default function ServicesPreview() {
       points: ['Teamwork', 'Healthy habits', 'Confidence building'],
       image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=80',
       reverse: false,
+    },
+
+
+     {
+      icon: Buildings,
+      eyebrow: 'Creativity',
+      title: 'Computer Program',
+        
+      description: 'Where curiosity meets technology, empowering young learners with the digital skills, computational thinking, and creativity they need to build, innovate, and thrive in a technology-driven world',
+      points: ['Digital skills', 'Problem-solving', 'Innovation & creativity'],
+      image: 'images/computer.jpeg ',
+      reverse: true,
     },
   ];
 
@@ -105,7 +119,7 @@ export default function ServicesPreview() {
                     ))}
                   </ul>
                   <Link
-                    href="/services"
+                    href="/about"
                     className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-navy border-b-2 border-navy pb-0.5 hover:text-gold-hover hover:border-gold-hover transition-colors self-start group"
                   >
                     Learn More
@@ -150,7 +164,7 @@ export default function ServicesPreview() {
           viewport={{ once: true, margin: '-50px' }}
         >
           <Link
-            href="/services"
+            href="/about"
             className="bg-gold hover:bg-gold-hover text-navy shadow-lg shadow-gold/20 px-10 py-4 font-bold uppercase tracking-wider text-sm transition-all rounded-sm inline-block hover:scale-105"
           >
             Explore More

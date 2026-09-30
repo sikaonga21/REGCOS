@@ -42,12 +42,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/about" className="text-gray-300 hover:text-[#FFD400] transition-colors cursor-pointer">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-gray-300 hover:text-[#FFD400] transition-colors cursor-pointer">
-                  Our Philosophy
+                  About
                 </Link>
               </li>
               <li>
@@ -72,22 +67,22 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Our Programs</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-[#FFD400] transition-colors cursor-pointer">
+                <Link href="/about" className="text-gray-300 hover:text-[#FFD400] transition-colors cursor-pointer">
                   Great Teachers
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-[#FFD400] transition-colors cursor-pointer">
+                <Link href="/about" className="text-gray-300 hover:text-[#FFD400] transition-colors cursor-pointer">
                   Music Program
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-[#FFD400] transition-colors cursor-pointer">
+                <Link href="/about" className="text-gray-300 hover:text-[#FFD400] transition-colors cursor-pointer">
                   Sports Training
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-[#FFD400] transition-colors cursor-pointer">
+                <Link href="/about" className="text-gray-300 hover:text-[#FFD400] transition-colors cursor-pointer">
                   Skills Recognition
                 </Link>
               </li>
@@ -115,6 +110,20 @@ export default function Footer() {
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
           <p>&copy; {new Date().getFullYear()} Regcos Christian Academy. All rights reserved.</p>
+        </div>
+
+        <div className="pt-12 text-center">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-gray-600">
+            Designed &amp; Developed by{' '}
+            <a
+              href="https://sikaonga.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary/60 hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4"
+            >
+              Sikaonga
+            </a>
+          </p>
         </div>
       </div>
     </footer>

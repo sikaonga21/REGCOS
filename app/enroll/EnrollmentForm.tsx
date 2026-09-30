@@ -1,32 +1,121 @@
 'use client';
 
 import { useState, type ChangeEvent, type FormEvent } from 'react';
-import { CaretDown, CheckCircle, WarningCircle } from 'phosphor-react';
+import { CheckCircle, WarningCircle } from 'phosphor-react';
 import { motion } from 'framer-motion';
 
+const initialFormData: Record<string, string> = {
+  childName: '',
+  childDob: '',
+  gender: '',
+  residentialAddress: '',
+  fatherName: '',
+  fatherOccupation: '',
+  fatherWorkPlace: '',
+  fatherPhone: '',
+  fatherEmail: '',
+  fatherNationality: '',
+  fatherReligion: '',
+  motherName: '',
+  motherOccupation: '',
+  motherWorkPlace: '',
+  motherPhone: '',
+  motherEmail: '',
+  motherNationality: '',
+  motherReligion: '',
+  previousSchool: '',
+  comfortableInGroups: '',
+  hasSiblings: '',
+  hasPet: '',
+  specialDiet: '',
+  hasAllergies: '',
+  allergyDetails: '',
+  usesDiapers: '',
+  usesPotty: '',
+  toiletReminders: '',
+  developmentalConcern: '',
+  developmentalDetails: '',
+  dayToDayCare: '',
+  homeLanguage: '',
+  expectedStartDate: '',
+};
+
+const inputClassName = 'w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-gray-700 transition-all focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/50';
+
+function Field({
+  label,
+  name,
+  type = 'text',
+  required = false,
+  formData,
+  onChange,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  formData: Record<string, string>;
+  onChange: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+}) {
+  return (
+    <label className="block text-sm font-semibold text-gray-700">
+      <span className="mb-2 block">{label}{required ? ' *' : ''}</span>
+      {type === 'textarea' ? (
+        <textarea name={name} value={formData[name]} onChange={onChange} required={required} rows={3} className={`${inputClassName} resize-none`} />
+      ) : (
+        <input type={type} name={name} value={formData[name]} onChange={onChange} required={required} className={inputClassName} />
+      )}
+    </label>
+  );
+}
+
+function RadioGroup({
+  label,
+  name,
+  options,
+  formData,
+  onChange,
+  required = false,
+}: {
+  label: string;
+  name: string;
+  options: string[];
+  formData: Record<string, string>;
+  onChange: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+  required?: boolean;
+}) {
+  return (
+    <fieldset>
+      <legend className="mb-3 text-sm font-semibold text-gray-700">{label}{required ? ' *' : ''}</legend>
+      <div className="flex flex-wrap gap-4">
+        {options.map((option) => (
+          <label key={option} className="flex cursor-pointer items-center gap-2 text-sm text-gray-600">
+            <input type="radio" name={name} value={option} checked={formData[name] === option} onChange={onChange} required={required && option === options[0]} className="h-4 w-4 accent-[#063B82]" />
+            {option}
+          </label>
+        ))}
+      </div>
+    </fieldset>
+  );
+}
+
+function SectionTitle({ children }: { children: React.ReactNode }) {
+  return <h3 className="mb-6 border-b border-gray-100 pb-4 text-xl font-bold uppercase tracking-wide text-navy">{children}</h3>;
+}
+
 export default function EnrollmentForm() {
-  const [formData, setFormData] = useState({
-    parentName: '',
-    parentEmail: '',
-    parentPhone: '',
-    childName: '',
-    childDob: '',
-    program: '',
-    previousSchool: '',
-    specialNeeds: ''
-  });
-  
+  const [formData, setFormData] = useState(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = event.target;
+    setFormData((previous) => ({ ...previous, [name]: value }));
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
     setErrorMessage('');
@@ -34,26 +123,14 @@ export default function EnrollmentForm() {
     try {
       const response = await fetch('/api/enroll', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
-
       const data = await response.json();
 
       if (response.ok) {
         setSubmitStatus('success');
-        setFormData({
-          parentName: '',
-          parentEmail: '',
-          parentPhone: '',
-          childName: '',
-          childDob: '',
-          program: '',
-          previousSchool: '',
-          specialNeeds: ''
-        });
+        setFormData({ ...initialFormData });
       } else {
         setSubmitStatus('error');
         setErrorMessage(data.error || 'There was an error submitting the registration. Please try again.');
@@ -68,166 +145,92 @@ export default function EnrollmentForm() {
   };
 
   return (
-    <section className="py-20 bg-cream">
+    <section className="bg-cream py-20">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <motion.div 
-            className="mb-12 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <p className="text-gold font-bold text-xs uppercase tracking-[0.3em] mb-4">Join Our Community</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">Student Registration</h2>
-            <div className="w-16 h-1 bg-gold mx-auto mb-6 rounded-full" />
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Please complete the form below to register your child's interest in joining Regcos Christian Academy. Our admissions team will contact you shortly.
-            </p>
+        <div className="mx-auto max-w-5xl">
+          <motion.div className="mb-12 text-center" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-gold">Join Our Community</p>
+            <h2 className="mb-6 text-4xl font-bold text-navy md:text-5xl">Student Registration</h2>
+            <div className="mx-auto mb-6 h-1 w-16 rounded-full bg-gold" />
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">Please complete the form below to register your child's interest in joining Regcos Christian Academy.</p>
           </motion.div>
-          
-          <motion.form 
-            onSubmit={handleSubmit} 
-            className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            {/* Top decorative gradient */}
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-navy via-gold to-navy"></div>
 
-            <h3 className="text-xl font-bold text-navy mb-6 border-b border-gray-100 pb-4">Parent/Guardian Information</h3>
-            <div className="grid md:grid-cols-2 gap-6 mb-10">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
-                <input
-                  type="text"
-                  name="parentName"
-                  value={formData.parentName}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-all"
-                  placeholder="e.g. John Doe"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
-                <input
-                  type="email"
-                  name="parentEmail"
-                  value={formData.parentEmail}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-all"
-                  placeholder="e.g. john@example.com"
-                />
-              </div>
-              <div className="md:col-span-2">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
-                <input
-                  type="tel"
-                  name="parentPhone"
-                  value={formData.parentPhone}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-all"
-                  placeholder="e.g. +260 970 000000"
-                />
+          <motion.form onSubmit={handleSubmit} className="relative overflow-hidden rounded-3xl border border-gray-100 bg-white p-8 shadow-xl md:p-12" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
+            <div className="absolute left-0 top-0 h-2 w-full bg-gradient-to-r from-navy via-gold to-navy" />
+
+            <div className="mb-10">
+              <SectionTitle>Child's Information</SectionTitle>
+              <div className="grid gap-6 md:grid-cols-2">
+                <Field label="Child's name?" name="childName" required formData={formData} onChange={handleChange} />
+                <Field label="Date of Birth?" name="childDob" type="date" required formData={formData} onChange={handleChange} />
+                <RadioGroup label="Gender?" name="gender" options={['Male', 'Female']} required formData={formData} onChange={handleChange} />
+                <Field label="Residential Address?" name="residentialAddress" required formData={formData} onChange={handleChange} />
               </div>
             </div>
 
-            <h3 className="text-xl font-bold text-navy mb-6 border-b border-gray-100 pb-4">Student Information</h3>
-            <div className="grid md:grid-cols-2 gap-6 mb-10">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Child's Full Name *</label>
-                <input
-                  type="text"
-                  name="childName"
-                  value={formData.childName}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-all"
-                />
+            <div className="mb-10">
+              <SectionTitle>1. Parent Details (Emergency Contact Information)</SectionTitle>
+              <div className="grid gap-6 md:grid-cols-2">
+                <Field label="Father/Guardian's Name?" name="fatherName" required formData={formData} onChange={handleChange} />
+                <Field label="Occupation?" name="fatherOccupation" required formData={formData} onChange={handleChange} />
+                <Field label="Work Place?" name="fatherWorkPlace" required formData={formData} onChange={handleChange} />
+                <Field label="Phone/WhatsApp No?" name="fatherPhone" type="tel" required formData={formData} onChange={handleChange} />
+                <Field label="Email Address?" name="fatherEmail" type="email" required formData={formData} onChange={handleChange} />
+                <Field label="Nationality?" name="fatherNationality" required formData={formData} onChange={handleChange} />
+                <Field label="Religion?" name="fatherReligion" required formData={formData} onChange={handleChange} />
               </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Date of Birth *</label>
-                <input
-                  type="date"
-                  name="childDob"
-                  value={formData.childDob}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-all text-gray-700"
-                />
+            </div>
+
+            <div className="mb-10">
+              <SectionTitle>2. Parent Details (Emergency Contact Information)</SectionTitle>
+              <div className="grid gap-6 md:grid-cols-2">
+                <Field label="Mother/Guardian's Name?" name="motherName" required formData={formData} onChange={handleChange} />
+                <Field label="Occupation?" name="motherOccupation" required formData={formData} onChange={handleChange} />
+                <Field label="Work Place?" name="motherWorkPlace" required formData={formData} onChange={handleChange} />
+                <Field label="Phone/WhatsApp No?" name="motherPhone" type="tel" required formData={formData} onChange={handleChange} />
+                <Field label="Email Address?" name="motherEmail" type="email" required formData={formData} onChange={handleChange} />
+                <Field label="Nationality?" name="motherNationality" required formData={formData} onChange={handleChange} />
+                <Field label="Religion?" name="motherReligion" required formData={formData} onChange={handleChange} />
               </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Program/Grade Applying For *</label>
-                <div className="relative">
-                  <select
-                    name="program"
-                    value={formData.program}
-                    onChange={handleChange}
-                    required
-                    className="w-full appearance-none bg-gray-50 border border-gray-200 px-4 py-3 pr-10 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-all text-gray-700"
-                  >
-                    <option value="">Select a Program</option>
-                    <option value="Nursery">Nursery / Pre-School</option>
-                    <option value="Primary">Primary School</option>
-                    <option value="Junior School">Junior Secondary</option>
-                    <option value="Senior School">Senior Secondary</option>
-                  </select>
-                  <CaretDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
+            </div>
+
+            <div className="mb-10">
+              <SectionTitle>Further Information About Your Child</SectionTitle>
+              <div className="space-y-7">
+                <RadioGroup label="Has your child been to any other school before?" name="previousSchool" options={['Yes', 'No']} formData={formData} onChange={handleChange} />
+                <RadioGroup label="Is your child comfortable in group situation?" name="comfortableInGroups" options={['Yes', 'No']} formData={formData} onChange={handleChange} />
+                <RadioGroup label="Does your child have any siblings?" name="hasSiblings" options={['Yes', 'No']} formData={formData} onChange={handleChange} />
+                <RadioGroup label="Does your child have a pet?" name="hasPet" options={['Yes', 'No']} formData={formData} onChange={handleChange} />
+                <RadioGroup label="Is your child on any special diet?" name="specialDiet" options={['Vegetarian', 'Vegan', 'Other', 'None']} formData={formData} onChange={handleChange} />
+                <RadioGroup label="Does your child have any allergies?" name="hasAllergies" options={['Yes', 'No']} formData={formData} onChange={handleChange} />
+                <Field label="If yes, please describe" name="allergyDetails" type="textarea" formData={formData} onChange={handleChange} />
+                <RadioGroup label="Does your child use diapers?" name="usesDiapers" options={['Yes', 'No']} formData={formData} onChange={handleChange} />
+                <RadioGroup label="Does your child use a potty or toilet?" name="usesPotty" options={['Yes', 'No']} formData={formData} onChange={handleChange} />
+                <RadioGroup label="Does your child need regular reminder to go to the toilet?" name="toiletReminders" options={['Yes', 'No']} formData={formData} onChange={handleChange} />
+                <RadioGroup label="In what area do you have concern about your child's development?" name="developmentalConcern" options={['Hearing', 'Vision', 'Language', 'Gross Motor', 'Fine Motor', 'Others', 'None']} required formData={formData} onChange={handleChange} />
+                <Field label="If any, kindly explain..." name="developmentalDetails" type="textarea" required formData={formData} onChange={handleChange} />
+                <div className="grid gap-6 md:grid-cols-2">
+                  <Field label="Who has day to day care of your child at home?" name="dayToDayCare" formData={formData} onChange={handleChange} />
+                  <Field label="What language is spoken at home?" name="homeLanguage" formData={formData} onChange={handleChange} />
+                  <Field label="Expected date to start school?" name="expectedStartDate" type="date" formData={formData} onChange={handleChange} />
                 </div>
               </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Previous School (if applicable)</label>
-                <input
-                  type="text"
-                  name="previousSchool"
-                  value={formData.previousSchool}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-all"
-                />
-              </div>
-            </div>
-
-            <h3 className="text-xl font-bold text-navy mb-6 border-b border-gray-100 pb-4">Additional Information</h3>
-            <div className="mb-10">
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Medical Conditions or Special Needs</label>
-              <textarea
-                name="specialNeeds"
-                value={formData.specialNeeds}
-                onChange={handleChange}
-                rows={4}
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-all resize-none"
-                placeholder="Please describe any allergies, medical conditions, or learning requirements we should be aware of..."
-              />
             </div>
 
             {submitStatus === 'success' && (
-              <div className="mb-8 p-6 bg-green-50 border border-green-200 rounded-xl flex items-start gap-4">
-                <CheckCircle size={28} weight="fill" className="text-green-500 shrink-0 mt-1" />
-                <div>
-                  <h4 className="text-green-800 font-bold mb-1">Registration Received!</h4>
-                  <p className="text-green-700 text-sm">Thank you for registering. We have sent the details to our admissions team and they will be in touch with you shortly.</p>
-                </div>
+              <div className="mb-8 flex items-start gap-4 rounded-xl border border-green-200 bg-green-50 p-6">
+                <CheckCircle size={28} weight="fill" className="mt-1 shrink-0 text-green-500" />
+                <div><h4 className="mb-1 font-bold text-green-800">Registration Received!</h4><p className="text-sm text-green-700">Thank you for registering. Our admissions team will be in touch shortly.</p></div>
               </div>
             )}
-
             {submitStatus === 'error' && (
-              <div className="mb-8 p-6 bg-red-50 border border-red-200 rounded-xl flex items-start gap-4">
-                <WarningCircle size={28} weight="fill" className="text-red-500 shrink-0 mt-1" />
-                <div>
-                  <h4 className="text-red-800 font-bold mb-1">Submission Failed</h4>
-                  <p className="text-red-700 text-sm">{errorMessage}</p>
-                </div>
+              <div className="mb-8 flex items-start gap-4 rounded-xl border border-red-200 bg-red-50 p-6">
+                <WarningCircle size={28} weight="fill" className="mt-1 shrink-0 text-red-500" />
+                <div><h4 className="mb-1 font-bold text-red-800">Submission Failed</h4><p className="text-sm text-red-700">{errorMessage}</p></div>
               </div>
             )}
 
-            <button
-              type="submit"
-              disabled={isSubmitting || submitStatus === 'success'}
-              className="w-full bg-navy hover:bg-navy-light text-white px-8 py-5 rounded-xl font-bold uppercase tracking-[0.15em] text-sm transition-all shadow-xl shadow-navy/20 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed hover:scale-[1.02]"
-            >
+            <button type="submit" disabled={isSubmitting || submitStatus === 'success'} className="w-full rounded-xl bg-navy px-8 py-5 text-sm font-bold uppercase tracking-[0.15em] text-white shadow-xl shadow-navy/20 transition-all hover:scale-[1.02] hover:bg-navy-light disabled:cursor-not-allowed disabled:opacity-70">
               {isSubmitting ? 'Submitting Registration...' : 'Submit Registration'}
             </button>
           </motion.form>

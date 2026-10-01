@@ -112,19 +112,7 @@ export default function Footer() {
           <p>&copy; {new Date().getFullYear()} Regcos Christian Academy. All rights reserved.</p>
         </div>
 
-        <div className="pt-12 text-center">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-gray-600">
-            Designed &amp; Developed by{' '}
-            <a
-              href="https://sikaonga.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary/60 hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4"
-            >
-              Sikaonga
-            </a>
-          </p>
-        </div>
+        
       </div>
     </footer>
   );

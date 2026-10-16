@@ -31,8 +31,8 @@ export default function ServicesHero() {
           transition={{ duration: 0.9, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
         >
           <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80"
-            alt="Students learning together"
+            src="/images/gallery/classroom-writing.jpg"
+            alt="Learners writing in their exercise books at their desks"
             className="h-full w-full object-cover"
           />
           <div className="absolute -bottom-5 -left-5 h-24 w-24 border-l-8 border-b-8 border-[#FFD400] md:h-32 md:w-32" />

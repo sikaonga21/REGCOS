@@ -13,7 +13,7 @@ export default function ServicesPreview() {
       description:
         'Passionate, caring educators who inspire excellence, character, and a love for learning in every child.',
       points: ['Dedicated guidance', 'Strong mentorship', 'Joyful learning'],
-      image: 'images/teacture.jpeg',
+      image: '/images/gallery/teacher-maths-lesson.jpg',
       reverse: false,
     },
     {
@@ -23,7 +23,7 @@ export default function ServicesPreview() {
       description:
         'Where creativity finds its rhythm and young talents are nurtured in our state-of-the-art music program.',
       points: ['Talent development', 'Creative confidence', 'Arts enrichment'],
-      image: 'images/music.jpeg',
+      image: '/images/gallery/violin-ensemble.jpg',
       reverse: true,
     },
 
@@ -35,7 +35,7 @@ export default function ServicesPreview() {
       description:
         'Building strong bodies, teamwork, and confidence through fun and structured sports activities.',
       points: ['Teamwork', 'Healthy habits', 'Confidence building'],
-      image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=80',
+      image: '/images/gallery/playground-trampoline.jpg',
       reverse: false,
     },
 
@@ -47,7 +47,7 @@ export default function ServicesPreview() {
         
       description: 'Where curiosity meets technology, empowering young learners with the digital skills, computational thinking, and creativity they need to build, innovate, and thrive in a technology-driven world',
       points: ['Digital skills', 'Problem-solving', 'Innovation & creativity'],
-      image: 'images/computer.jpeg ',
+      image: '/images/gallery/ict-lab-typing.jpg',
       reverse: true,
     },
   ];
@@ -143,6 +143,8 @@ export default function ServicesPreview() {
                   <img
                     src={service.image}
                     alt={service.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute bottom-6 right-6 flex gap-2">

@@ -9,6 +9,7 @@ import AboutPreview from './AboutPreview';
 import ServicesPreview from './ServicesPreview';
 import FeaturedListings from './FeaturedListings';
 import TrustSection from './TrustSection';
+import GalleryPreview from './GalleryPreview';
 import TestimonialsSection from './TestimonialsSection';
 import CTASection from './CTASection';
 
@@ -22,6 +23,7 @@ export default function Home() {
         <ServicesPreview />
         <FeaturedListings />
         <TrustSection />
+        <GalleryPreview />
         <TestimonialsSection />
         <CTASection />
       </main>

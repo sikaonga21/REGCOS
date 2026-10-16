@@ -93,7 +93,7 @@ export default function BlogAdminPage() {
     const payload = {
       ...form,
       featured_images: normalizedImages.length > 0 ? normalizedImages : (form.featured_image ? [form.featured_image] : []),
-      featured_image: normalizedImages[0] || form.featured_image || 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80',
+      featured_image: normalizedImages[0] || form.featured_image || '/images/gallery/classroom-hands-up.jpg',
       featured_image_alt: form.featured_image_alt || form.title,
     };
 

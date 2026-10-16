@@ -7,8 +7,7 @@ export default function TeamHero() {
     <section
       className="relative h-[100vh] mt-[60px] flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80')",
+        backgroundImage: "url('/images/gallery/staff-team.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',

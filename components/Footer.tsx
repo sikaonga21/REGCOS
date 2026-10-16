@@ -51,7 +51,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/construction" className="text-gray-300 hover:text-[#FFD400] transition-colors cursor-pointer">
+                <Link href="/gallery" className="text-gray-300 hover:text-[#FFD400] transition-colors cursor-pointer">
                   Gallery
                 </Link>
               </li>

@@ -15,8 +15,7 @@ export default function EnrollPage() {
       <div
         className="pt-32 pb-16 relative overflow-hidden bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1800&q=80')",
+          backgroundImage: "url('/images/gallery/early-years-class.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-black/35" />

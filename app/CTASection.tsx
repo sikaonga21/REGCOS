@@ -48,8 +48,10 @@ export default function CTASection() {
         viewport={{ once: true, margin: '-100px' }}
       >
         <img
-          src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80"
-          alt="Regcos Christian Academy campus"
+          src="/images/gallery/violin-portrait.jpg"
+          alt="A pupil holding a violin and bow during music club"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover opacity-90"
         />
         <div className="absolute inset-0 flex items-center justify-center">

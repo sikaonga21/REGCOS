@@ -8,16 +8,20 @@ import { ArrowRight } from 'phosphor-react';
 
 const slides = [
   {
-    url: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80',
-    alt: 'Students playing outside at school',
+    url: '/images/gallery/classroom-hands-up.jpg',
+    alt: 'Pupils raising their hands to answer a question in class',
   },
   {
-    url: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1600&q=80',
-    alt: 'Children learning together in a bright classroom',
+    url: '/images/gallery/music-class.jpg',
+    alt: 'Children playing recorders together in the school music room',
   },
   {
-    url: 'images/musicski.jpeg',
-    alt: 'Happy school children at the playground',
+    url: '/images/gallery/ict-lab-duo.jpg',
+    alt: 'Two pupils smiling at their computers in the ICT lab',
+  },
+  {
+    url: '/images/gallery/staff-team.jpg',
+    alt: 'Regcos Christian Academy staff outside the school entrance',
   },
 ];
 

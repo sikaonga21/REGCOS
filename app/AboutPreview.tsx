@@ -59,8 +59,12 @@ export default function AboutPreview() {
             viewport={{ once: true, margin: "-100px" }}
           >
             <img
-              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80"
-              alt="Regcos Christian Academy overview"
+              src="/images/gallery/staff-team.jpg"
+              alt="Regcos Christian Academy staff standing together outside the school entrance"
+              width={1920}
+              height={1440}
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute bottom-6 right-6 flex gap-2">

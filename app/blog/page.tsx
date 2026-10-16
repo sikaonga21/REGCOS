@@ -19,7 +19,7 @@ const fallbackPosts = [
     excerpt: 'At Regcos Christian Academy, we believe that education rooted in Christian values doesn\'t just teach facts — it shapes character, builds empathy, and gives children a moral foundation that guides them for life.',
     date: 'September 15, 2026',
     author: 'The Regcos Team',
-    image: 'https://readdy.ai/api/search-image?query=children+praying+together+in+school+chapel%2C+faith-based+education%2C+warm+spiritual+learning+environment%2C+golden+hour+lighting&width=800&height=500&seq=blog-001&orientation=landscape',
+    image: '/images/gallery/grace-before-meal.jpg',
     readTime: '4 min read',
   },
   {
@@ -30,7 +30,7 @@ const fallbackPosts = [
     excerpt: 'Research shows the first years of schooling are the most critical for literacy development. Discover how our dedicated teachers use proven, joyful methods to ignite a love of reading in every child.',
     date: 'September 10, 2026',
     author: 'Mrs. Chanda Mutale',
-    image: 'https://readdy.ai/api/search-image?query=young+children+reading+books+in+bright+colorful+classroom%2C+teacher+reading+aloud%2C+happy+students%2C+warm+natural+light&width=800&height=500&seq=blog-002&orientation=landscape',
+    image: '/images/gallery/classroom-writing.jpg',
     readTime: '5 min read',
   },
   {
@@ -41,7 +41,7 @@ const fallbackPosts = [
     excerpt: 'Our annual Sports Day was a tremendous success! Read our recap of the incredible athletic achievements, teamwork moments, and community spirit that made this year\'s event one to remember.',
     date: 'August 28, 2026',
     author: 'Coach Banda',
-    image: 'https://readdy.ai/api/search-image?query=school+sports+day%2C+children+running+race+on+track%2C+cheering+crowd%2C+colorful+school+uniforms%2C+sunny+day%2C+joyful+atmosphere&width=800&height=500&seq=blog-003&orientation=landscape',
+    image: '/images/gallery/playground-trampoline.jpg',
     readTime: '3 min read',
   },
   {
@@ -52,7 +52,7 @@ const fallbackPosts = [
     excerpt: 'Music education goes far beyond learning an instrument. We explore how our music program at Regcos strengthens memory, discipline, emotional intelligence, and creative expression in our young learners.',
     date: 'August 20, 2026',
     author: 'Mr. Phiri',
-    image: 'https://readdy.ai/api/search-image?query=children+playing+musical+instruments+in+school%2C+music+class%2C+choir%2C+happy+students+singing%2C+school+concert&width=800&height=500&seq=blog-004&orientation=landscape',
+    image: '/images/gallery/music-class.jpg',
     readTime: '5 min read',
   },
   {
@@ -63,7 +63,7 @@ const fallbackPosts = [
     excerpt: 'A child flourishes when home and school work as one. Learn how Regcos Christian Academy fosters meaningful relationships with parents and what our community involvement initiatives look like in practice.',
     date: 'August 12, 2026',
     author: 'The Regcos Team',
-    image: 'https://readdy.ai/api/search-image?query=parent+teacher+meeting+at+school%2C+warm+collaboration%2C+professional+friendly+classroom+setting%2C+family+education&width=800&height=500&seq=blog-005&orientation=landscape',
+    image: '/images/gallery/teacher-maths-lesson.jpg',
     readTime: '4 min read',
   },
   {
@@ -74,7 +74,7 @@ const fallbackPosts = [
     excerpt: 'Choosing a school is one of the most important decisions a parent can make. We\'ve put together a helpful guide of key questions to consider when evaluating schools — and how Regcos measures up.',
     date: 'July 30, 2026',
     author: 'The Admissions Team',
-    image: 'https://readdy.ai/api/search-image?query=happy+family+visiting+school%2C+parents+and+child+at+school+tour%2C+admissions%2C+modern+school+building%2C+friendly+staff&width=800&height=500&seq=blog-006&orientation=landscape',
+    image: '/images/gallery/staff-team.jpg',
     readTime: '6 min read',
   },
 ];
@@ -133,8 +133,7 @@ export default function BlogPage() {
       <div
         className="pt-32 pb-20 relative overflow-hidden bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1800&q=80')",
+          backgroundImage: "url('/images/gallery/classroom-smile.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-black/35" />

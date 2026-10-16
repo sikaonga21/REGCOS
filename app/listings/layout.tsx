@@ -10,9 +10,9 @@ export const metadata: Metadata = {
     url: 'https://regcoschristianacademy.com/listings',
     images: [
       {
-        url: '/images/logoo.png',
+        url: '/images/og-image.png',
         width: 1200,
-        height: 1200,
+        height: 630,
         alt: 'Regcos Christian Academy logo',
         type: 'image/png',
       },

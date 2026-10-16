@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     siteName: 'Regcos Christian Academy',
     images: [
       {
-        url: '/images/logo.png',
+        url: '/images/og-image.png',
         width: 1200,
-        height: 1200,
+        height: 630,
         alt: 'Regcos Christian Academy',
         type: 'image/png',
       },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Regcos Christian Academy',
     description: 'A Christ-centered institution dedicated to nurturing hearts, minds, and futures through quality education and strong Christian values.',
-    images: ['/images/logo.png'],
+    images: ['/images/og-image.png'],
     creator: '@regcosacademy',
   },
   robots: {
@@ -74,8 +74,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/png" href="/favicon.png" sizes="any" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+        <link rel="icon" type="image/png" href="/favicon.png" sizes="512x512" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />

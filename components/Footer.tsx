@@ -9,8 +9,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <img 
-              src="/images/logo.svg" 
-              alt="Regcos Christian Academy" 
+              src="/images/logo.png"
+              alt="Regcos Christian Academy"
+              width={800}
+              height={683}
               className="h-16 w-auto mb-4"
             />
             <p className="text-gray-300 mb-4">

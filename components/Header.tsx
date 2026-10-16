@@ -76,6 +76,8 @@ export default function Header() {
             <img
               src="/images/logo.png"
               alt="Regcos Christian Academy"
+              width={800}
+              height={683}
               className={`w-auto transition-all duration-300 ${
                 transparentMode ? 'h-20' : 'h-16'
               }`}

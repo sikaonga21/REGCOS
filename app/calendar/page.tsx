@@ -5,7 +5,6 @@ import { CalendarBlank, MapPin, Clock } from 'phosphor-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import { supabase } from '@/lib/supabase';
 
 type CalendarEvent = {
   id: string;
@@ -73,12 +72,11 @@ export default function CalendarPage() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const { data, error } = await supabase
-          .from('calendar_events')
-          .select('*')
-          .order('start_at', { ascending: true });
+        const response = await fetch('/api/calendar');
+        const result = await response.json();
+        const data = Array.isArray(result?.data) ? result.data : [];
 
-        if (!error && data && data.length > 0) {
+        if (response.ok && data.length > 0) {
           setEvents(data as CalendarEvent[]);
         } else {
           setEvents(fallbackEvents);

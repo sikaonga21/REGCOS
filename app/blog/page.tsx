@@ -7,7 +7,6 @@ import { ArrowRight, CalendarBlank, MagnifyingGlass, BookOpen } from 'phosphor-r
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import { supabase } from '@/lib/supabase';
 import { blogPlaceholderImages } from '@/lib/blog-placeholder-data';
 
 const fallbackPosts = [
@@ -91,19 +90,21 @@ export default function BlogPage() {
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        const { data, error } = await supabase.from('blog_posts').select('*').eq('status', 'published').order('published_at', { ascending: false });
+        const response = await fetch('/api/blog');
+        const result = await response.json();
+        const data = Array.isArray(result?.data) ? result.data : [];
 
-        if (!error && data && data.length > 0) {
-          const mapped = data.map((post, index) => ({
+        if (response.ok && data.length > 0) {
+          const mapped = data.map((post: any, index: number) => ({
             id: post.id,
             slug: post.slug,
             category: post.category || categories[index % categories.length],
             title: post.title,
             excerpt: post.excerpt || post.content?.slice(0, 180) || 'Read the full story.',
             date: post.published_at ? new Date(post.published_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : 'Recently',
-            author: 'Regcos Team',
+            author: post.author || 'Regcos Team',
             image: post.featured_image || blogPlaceholderImages[index % blogPlaceholderImages.length],
-            readTime: '4 min read',
+            readTime: `${post.read_minutes || 4} min read`,
           }));
           setPosts(mapped);
         } else {

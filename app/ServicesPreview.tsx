@@ -35,7 +35,7 @@ export default function ServicesPreview() {
       description:
         'Building strong bodies, teamwork, and confidence through fun and structured sports activities.',
       points: ['Teamwork', 'Healthy habits', 'Confidence building'],
-      image: '/images/gallery/playground-trampoline.jpg',
+      image: '/images/gallery/sportday.jpg',
       reverse: false,
     },
 

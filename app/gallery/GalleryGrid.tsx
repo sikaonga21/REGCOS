@@ -3,7 +3,12 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, MagnifyingGlassPlus, X } from 'phosphor-react';
-import { galleryCategories, galleryPhotos, type GalleryCategory } from '@/lib/gallery';
+import {
+  galleryCategories,
+  galleryPhotos,
+  type GalleryCategory,
+  type GalleryPhoto,
+} from '@/lib/gallery';
 
 type Filter = 'All' | GalleryCategory;
 
@@ -12,13 +17,37 @@ const filters: Filter[] = ['All', ...galleryCategories];
 export default function GalleryGrid() {
   const [activeFilter, setActiveFilter] = useState<Filter>('All');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  // Starts from the bundled set so the grid renders immediately, then swaps in
+  // whatever the admin panel has published. The API falls back to this same set.
+  const [allPhotos, setAllPhotos] = useState<GalleryPhoto[]>(galleryPhotos);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const loadPhotos = async () => {
+      try {
+        const response = await fetch('/api/gallery');
+        const result = await response.json();
+        if (!cancelled && response.ok && Array.isArray(result?.data) && result.data.length > 0) {
+          setAllPhotos(result.data as GalleryPhoto[]);
+        }
+      } catch {
+        // Keep the bundled photos.
+      }
+    };
+
+    void loadPhotos();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const photos = useMemo(
     () =>
       activeFilter === 'All'
-        ? galleryPhotos
-        : galleryPhotos.filter((photo) => photo.category === activeFilter),
-    [activeFilter]
+        ? allPhotos
+        : allPhotos.filter((photo) => photo.category === activeFilter),
+    [activeFilter, allPhotos]
   );
 
   const showNext = useCallback(() => {

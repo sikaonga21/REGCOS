@@ -12,7 +12,7 @@ const slides = [
     alt: 'Pupils raising their hands to answer a question in class',
   },
   {
-    url: '/images/gallery/music-class.jpg',
+    url: '/images/gallery/music2.jpg',
     alt: 'Children playing recorders together in the school music room',
   },
   {
@@ -20,7 +20,7 @@ const slides = [
     alt: 'Two pupils smiling at their computers in the ICT lab',
   },
   {
-    url: '/images/gallery/staff-team.jpg',
+    url: '/images/gallery/outdoor.jpg',
     alt: 'Regcos Christian Academy staff outside the school entrance',
   },
 ];
@@ -76,14 +76,7 @@ export default function HeroSection() {
             The Best Place For Your Kids!
           </motion.h1>
 
-          <motion.p
-            className="text-lg md:text-xl text-white/85 font-light leading-relaxed mb-10 max-w-3xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-          >
-            We are a Christ-centered institution dedicated to nurturing hearts, minds, and futures through academic excellence, strong Christian values, and joyful learning.
-          </motion.p>
+       
 
           <motion.div
             className="flex flex-col sm:flex-row gap-4"

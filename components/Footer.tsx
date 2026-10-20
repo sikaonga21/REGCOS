@@ -19,7 +19,7 @@ export default function Footer() {
               A Christ-centered institution nurturing hearts, minds, and futures through quality education and strong Christian values.
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#FFD400] hover:text-white transition-colors cursor-pointer">
+              <a href="https://web.facebook.com/regcos" target="_blank" rel="noopener noreferrer" className="text-[#FFD400] hover:text-white transition-colors cursor-pointer">
                 <i className="ri-facebook-fill text-xl"></i>
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[#FFD400] hover:text-white transition-colors cursor-pointer">

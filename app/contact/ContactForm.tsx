@@ -1,76 +1,33 @@
 'use client';
 
-import { useState, type ChangeEvent, type FormEvent } from 'react';
+import { useActionState, useEffect, useState, type ChangeEvent } from 'react';
 import { CaretDown } from 'phosphor-react';
+import { submitContactAction, type ContactActionState } from './actions';
+
+const emptyFormData = () => ({
+  name: '',
+  email: '',
+  phone: '',
+  subject: '',
+  program: '',
+  childAge: '',
+  message: '',
+});
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    program: '',
-    childAge: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState('');
+  const [formData, setFormData] = useState(emptyFormData);
+  const [actionState, formAction, isSubmitting] = useActionState<ContactActionState, FormData>(
+    submitContactAction,
+    { status: 'idle', message: '' }
+  );
+
+  useEffect(() => {
+    if (actionState.status === 'success') setFormData(emptyFormData());
+  }, [actionState.status]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('');
-
-    if (formData.message.length > 500) {
-      setSubmitStatus('Message must be 500 characters or less');
-      setIsSubmitting(false);
-      return;
-    }
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          subject: formData.subject,
-          program: formData.program,
-          childAge: formData.childAge,
-          message: formData.message
-        })
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setSubmitStatus('Thank you for your message! We will get back to you soon.');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          subject: '',
-          program: '',
-          childAge: '',
-          message: ''
-        });
-      } else {
-        setSubmitStatus(data.error || 'There was an error sending your message. Please try again.');
-      }
-    } catch (error) {
-      console.error('Contact form error:', error);
-      setSubmitStatus('There was an error sending your message. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
   };
 
   return (
@@ -86,7 +43,7 @@ export default function ContactForm() {
             </p>
           </div>
           
-          <form id="contact-form" onSubmit={handleSubmit} className="bg-white p-8 md:p-10 border border-gray-100">
+          <form id="contact-form" action={formAction} className="bg-white p-8 md:p-10 border border-gray-100">
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
@@ -202,9 +159,12 @@ export default function ContactForm() {
               </div>
             </div>
 
-            {submitStatus && (
-              <div className={`mb-6 p-4 ${submitStatus.includes('error') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
-                {submitStatus}
+            {actionState.message && (
+              <div
+                role="status"
+                className={`mb-6 p-4 ${actionState.status === 'error' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}
+              >
+                {actionState.message}
               </div>
             )}
 

@@ -47,3 +47,8 @@ tmp
 *.tmp
 *.temp 
 cm-transport
+# TypeScript incremental build info
+*.tsbuildinfo
+
+# Vercel
+.vercel

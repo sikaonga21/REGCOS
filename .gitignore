@@ -52,3 +52,5 @@ cm-transport
 
 # Vercel
 .vercel
+.env*
+!.env.example

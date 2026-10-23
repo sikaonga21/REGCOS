@@ -7,7 +7,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import HeroSection from './HeroSection';
 import AboutPreview from './AboutPreview';
 import ServicesPreview from './ServicesPreview';
-import FeaturedListings from './FeaturedListings';
+import ProcessSection from './services/ProcessSection';
 import TrustSection from './TrustSection';
 import GalleryPreview from './GalleryPreview';
 import TestimonialsSection from './TestimonialsSection';
@@ -21,7 +21,7 @@ export default function Home() {
         <HeroSection />
         <AboutPreview />
         <ServicesPreview />
-        <FeaturedListings />
+        <ProcessSection />
         <TrustSection />
         <GalleryPreview />
         <TestimonialsSection />

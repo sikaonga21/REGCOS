@@ -5,28 +5,28 @@ import { motion } from 'framer-motion';
 const steps = [
   {
     number: '01',
-    title: 'Initial Consultation',
-    description: 'We discuss your property needs and provide expert advice on available options.',
+    title: 'Family Consultation',
+    description: 'Meet our admissions team to discuss your child’s needs and learning journey.',
   },
   {
     number: '02',
-    title: 'Site Inspection',
-    description: 'Professional site visit and evaluation to ensure the property meets your requirements.',
+    title: 'Campus Visit',
+    description: 'Explore our classrooms, meet our educators, and experience our school community.',
   },
   {
     number: '03',
-    title: 'Documentation',
-    description: 'Complete all necessary paperwork and legal documentation for your peace of mind.',
+    title: 'Application',
+    description: 'Complete the application and share the information we need to support your child.',
   },
   {
     number: '04',
-    title: 'Payment Processing',
-    description: 'Flexible payment options with transparent pricing and no hidden fees.',
+    title: 'Enrollment',
+    description: 'Confirm your child’s place and complete the enrollment arrangements with our team.',
   },
   {
     number: '05',
-    title: 'Property Handover',
-    description: 'Official handover with all necessary documents and ongoing support.',
+    title: 'Welcome to Regcos',
+    description: 'Join our school community and receive support as your child begins their journey.',
   },
 ];
 
@@ -41,15 +41,12 @@ export default function ProcessSection() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, margin: '-100px' }}
         >
-          <p className="text-[#FFD400] font-bold text-xs uppercase tracking-[0.3em] mb-4">
-            How It Works
-          </p>
           <h2 className="text-4xl font-bold text-white uppercase leading-tight mb-4">
             Our Process
           </h2>
           <div className="w-12 h-0.5 bg-[#FFD400] mb-4" />
           <p className="text-white/60 max-w-2xl text-sm leading-relaxed">
-            A streamlined approach to make your property acquisition journey smooth and hassle-free.
+            A caring, step-by-step admissions journey to help your child learn, grow, and thrive.
           </p>
         </motion.div>
 
